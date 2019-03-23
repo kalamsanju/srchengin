@@ -1,4 +1,4 @@
-#! C:/Python27/python
+#!/usr/bin/python
 
 ##### This script use inverted index of 10000 web pages pages its location is
 ##### var/www/html/cgi-bin folder and webpages are stored in /home/crawled data/webpages files  
@@ -22,7 +22,8 @@ print ('<p>Search Results !!! </p>')
 q = form.getvalue('query_term')
 
 # python search script
-index_dir = "H:/myproject/indexing/"
+####index_dir = "H:/myproject/indexing/"
+index_dir = "indexing"
 ####for web hosting path selection shuold be like this
 #####index_dir = "/public_html/indexing/"
 from whoosh.index import open_dir
