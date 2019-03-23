@@ -1,0 +1,368 @@
+<!DOCTYPE html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><link rel="stylesheet" href="//education.seattlepi.com/style.css" type="text/css"><link rel="shortcut icon" href="//education.seattlepi.com/favicon.ico"><link rel="icon" href="//education.seattlepi.com/favicon.ico"><link rel="alternate" type="application/rss+xml" title href="//education.seattlepi.com/rss/root.xml"><!-- Custom Dimension dataLayer --><script title="dataLayer" type="text/javascript">
+  var dataLayer = [] || window.dataLayer;
+
+  dataLayer.push({
+    "event": "head.template",
+    "pagetype": "Article",
+    "subpagetype": "Topic View",
+    "studioid": "358ba262-15d9-4510-aa57-c9190f12dcb9",
+    "content_name": "How to Write a Good Argumentative Essay Introduction",
+    "publish_date": "2013-05-15 14:39:42.603000",
+    "rating": "4",
+    "author": "Soheila Battaglia",
+    "structure_rating": "5","ancestor_category1": "College &amp; Higher Education","ancestor_category2": "","category": "EDUCATION","subcategory": "College &amp; Higher Education","has_image" : "TRUE","keyword1":"essay intro","keyword2":"argumentative essay introduction","keyword3":"writing guide"})
+</script><!-- End Custom Dimension dataLayer --><script type="text/javascript">
+  // Determine WebP Support
+// Adapted from https://github.com/Modernizr/Modernizr/blob/master/feature-detects/img/webp.js
+(function() {
+	webp_flag = false;
+ 	var image = new Image();
+	image.src = 'data:image/webp;base64,UklGRiwAAABXRUJQVlA4ICAAAAAUAgCdASoBAAEAL/3+/3+CAB/AAAFzrNsAAP5QAAAAAA==';
+	image.onload = function() {
+		webp_flag = (image.width == 1);
+	}
+})();
+
+if (typeof $ !== 'undefined'){
+	// Lazy Load Images
+	$.fn.lazyImage = function(callback) {
+		var imgLen = this.length,
+				count = 0;
+		return this.each(function() {
+			if ($(this).attr('data-src')) {
+				var imgTag = this, imgSrc = $(this).attr('data-src'), del;
+				if (webp_flag) {
+					// Checks that image is using DM Resize and is not a .gif file
+					if (imgSrc.match(/DM\-Resize/g) && imgSrc.match(/webp=1/g) && (imgSrc.indexOf('.gif') == -1)) {
+						imgSrc = imgSrc + '&format=webp&quality=80';
+					}
+				}
+				i = new Image();
+				i.onload = function() {
+					$(imgTag).attr('src',imgSrc).fadeTo(400,1,function() {
+						(count += 1) && (imgLen == count) && (typeof callback == 'function') && callback.call(this);
+					});
+				};
+				i.src = imgSrc;
+			}
+		});
+	};
+
+	// Post Load Scripts
+	function lazyScript(check, url, callback) {
+		if ( ! check() ) { return; }
+		$.ajax({
+			url: url,
+			dataType: 'script',
+			success: callback,
+			cache: true
+		});
+	};
+}
+
+
+
+// *** helper functions for removing jquery *** //
+
+// cross-browser doc ready function
+function docReady(callback) {
+	if (document.readyState != 'loading'){
+		callback();
+	} else if (document.addEventListener) {
+		document.addEventListener('DOMContentLoaded', callback);
+	} else {
+		document.attachEvent('onreadystatechange', function() {
+			if (document.readyState != 'loading')
+				callback();
+		});
+	}
+}
+
+// cross-browser add event listener (IE8)
+function addListener(el, eventName, handler) {
+	if (el && el.addEventListener)
+		el.addEventListener(eventName, handler);
+	else if (el && el.attachEvent) {
+		el.attachEvent('on' + eventName, function(){
+			handler.call(el);
+		});
+	} else
+		return false;
+		//console.error("couldn't attach event: " + eventName + " to element: " + el);
+}
+
+function removeClass(el, className){
+	if (el && el.classList)
+		el.classList.remove(className);
+	else if (el)
+		el.className = el.className.replace(new RegExp('(^|\\b)' + className.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+	else
+		return false;
+		//console.error("couldn't remove class: " + className + " from element: " + el);
+}
+
+function addClass(el, className){
+	if (el && el.classList)
+	  el.classList.add(className);
+	else if (el)
+	  el.className += ' ' + className;
+	else
+		return false;
+		//console.error("couldn't add class: " + className + " to element: " + el);
+}
+
+function hasClass(el, className){
+	if (el && el.classList)
+	  return el.classList.contains(className);
+	else if (el)
+	  return new RegExp('(^| )' + className + '( |$)', 'gi').test(el.className);
+	else
+		return null;
+}
+
+function getIndex(el){
+  let i = 0;
+  while (el.previousSibling != null){
+    if (el.previousSibling.nodeType == 1){
+      // only count actual elements, not text nodes
+      i++;
+    }
+    el = el.previousSibling;
+  }
+  return i;
+}
+
+//add forEach support for IE 8
+if (typeof Array.prototype.forEach != 'function') {
+  Array.prototype.forEach = function(callback){
+    for (var i = 0; i < this.length; i++){
+      callback.apply(this, [this[i], i, this]);
+    }
+  };
+}
+</script><!-- Bing Webmaster Tool Auth --><meta name="msvalidate.01" content="129B5DE6FF8DD0ECBDD457C93FF101E3"><script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://education.seattlepi.com/write-good-argumentative-essay-introduction-1484.html",
+  "url": "https://education.seattlepi.com/write-good-argumentative-essay-introduction-1484.html",
+  "name":"How to Write a Good Argumentative Essay Introduction",
+  "breadcrumb":{
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@type": "Website",
+          "@id": "https://education.seattlepi.com/college-higher-education/",
+          "url": "https://education.seattlepi.com/college-higher-education/",
+          "name": "College &amp; Higher Education"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@type": "Website",
+          "@id": "https://education.seattlepi.com/",
+          "url": "https://education.seattlepi.com/",
+          "name": "Education - Seattle PI"
+        }
+      }
+    ]
+  },
+  "inLanguage":"en-US",
+  "mainEntity":{
+    "@type":"Article",
+    "@id": "https://education.seattlepi.com/write-good-argumentative-essay-introduction-1484.html",
+    "url": "https://education.seattlepi.com/write-good-argumentative-essay-introduction-1484.html",
+    "mainEntityOfPage": "true",
+    "datePublished":"2013-05-15 20:02:00",
+    "dateModified":"2017-11-21 18:20:09.739000",
+    "headline": "How to Write a Good Argumentative Essay Introduction",
+    "description":"How to Write a Good Argumentative Essay Introduction. A good introduction in an argumentative essay acts like a good opening statement in a trial. Just like a lawyer, a writer must present the issue at hand, give background, and put forth the main argument -- all in a logical, intellectual and persuasive way.",
+    "keywords": "essay intro, argumentative essay introduction, writing guide",
+    "Publisher": {
+      "@type": "Organization",
+      "name": "Seattle PI",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://education.seattlepi.com/images/channelLogo.png"}
+    },
+    "Author":{
+      "@type":"person",
+      "name":"Soheila Battaglia"
+    },
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://photos.demandstudios.com/getty/article/56/159/86514703_XS.jpg",
+      "height": "267",
+      "width": "400"
+    }
+  }
+}
+</script><title>How to Write a Good Argumentative Essay Introduction | Education - Seattle PI</title><meta name="description" content="A good introduction in an argumentative essay acts like a good opening statement in a trial. Just like a lawyer, a writer must present the issue at hand, give background, and put forth the main argument -- all in a logical, intellectual and persuasive way."><meta property="og:type" content="article"><meta property="og:description" content="A good introduction in an argumentative essay acts like a good opening statement in a trial. Just like a lawyer, a writer must present the issue at hand, give background, and put forth the main argument -- all in a logical, intellectual and persuasive way."><meta property="og:title" content="How to Write a Good Argumentative Essay Introduction"><meta property="og:image" content="//img-aws.ehowcdn.com/600x600p/photos.demandstudios.com/getty/article/56/159/86514703.jpg"><link rel="canonical" href="https://education.seattlepi.com/write-good-argumentative-essay-introduction-1484.html"><script type="text/javascript">
+var loadAd_UrlLocation = "https://aps.hearstnp.com/"
+var adwiz_errors = ''; /* this is a container to hold errors */
+var JuicePageUrl = "";
+var taxOverride = null;
+var secOverride = null;
+var cccOverride = null;
+var YSMTier;
+var YSMCategory;
+var APSpageUrl;
+var juice_errors = "";
+
+
+
+
+/*********************** Get URL from parent or URL Override ***********************/
+function getPageUrl()
+{
+    var returnUrl;
+
+    /* due to cross site scripting, attempt to get information from parent */
+    var parentAPSPageURL;
+    var parentPageUrl;
+    try {
+        parentAPSPageURL = parent.APSpageUrl;
+        parentPageUrl = parent.window.location.host + parent.window.location.pathname + parent.window.location.search;
+    }
+    catch (e) {
+        juice_errors = "juice service error - unable to get parent information\n";
+    }
+
+    /* iFrames need to use APSpageUrl variable or parents URL. If these don't exist (then not in iFrame) use current url */
+    try {
+        returnUrl = parentAPSPageURL || APSpageUrl || parentPageUrl ||
+        window.location.host + window.location.pathname + window.location.search;
+    }
+    catch (e) {
+        /* error probably occured trying to get the parent hostname */
+        returnUrl = window.location.host + window.location.pathname + window.location.search;
+        juice_errors += 'juice serve error - getting JuicePageUrl\n';
+    }
+
+    return returnUrl;
+}
+
+/*********************** Clean up URL ***********************/
+function cleanUrl(returnUrl)
+{
+    /* Remove http:// and https:// */
+    if (returnUrl.toLowerCase().indexOf('http://') == 0) {
+        returnUrl = returnUrl.substr(7, returnUrl.length);
+    }
+    if (returnUrl.toLowerCase().indexOf('https://') == 0) {
+        returnUrl = returnUrl.substr(8, returnUrl.length);
+    }
+
+    /* page URL can only be 300 chars long */
+    if (returnUrl.length > 300) {
+        returnUrl = returnUrl.substr(0, 300);
+    }
+
+    /* If the last character is a '/' then we need to remove the slash. This allows the system to distinguish
+    ads that go on this page and adds that do not fall in correct bucket. (I.E. www.chron.com/ and www.chron.com/notReal/ */
+    if (returnUrl.charAt(returnUrl.length - 1) == "/") {
+        returnUrl = returnUrl.slice(0, -1);
+    }
+
+    return returnUrl;
+}
+
+/*********************** Write calls to document ***********************/
+function serve_JuiceAds(urlToSend)
+{
+
+    window.onJuiceEvent_ServeAds && window.onJuiceEvent_ServeAds();
+    try {
+        var adUrl = 'https://aps.hearstnp.com/SRO/GetJS?url=' + escape(urlToSend);
+        document.write('<scr' + 'ipt id="AdsConfigJavaScript" type="text/javascript" src="' + adUrl + '"><\/scr' + 'ipt>');
+
+    }
+    catch (e)
+    {
+        juice_errors += 'juice serve error - writing to document\n';
+    }
+}
+
+
+
+</script><script id="AdsConfigJavaScript" type="text/javascript" src="https://aps.hearstnp.com/SRO/GetJS?url=education.seattlepi.com/write-good-argumentative-essay-introduction-1484.html"></script><!-- Taboola --><script type="text/javascript">
+        var VIEWPORT_WIDTH = document.documentElement.clientWidth || document.body.clientWidth;
+        var scriptSrc;
+        if (VIEWPORT_WIDTH < 775) {
+            // Mobile script src
+            scriptSrc = '//cdn.taboola.com/libtrc/hearstlocalnews-seattlepimobile/loader.js';
+        } else {
+            // Desktop script src
+            scriptSrc = '//cdn.taboola.com/libtrc/hearstlocalnews-seattlepi/loader.js';
+        }
+        window._taboola = window._taboola || [];
+        _taboola.push({other:'auto'});
+        !function (e, f, u, i) {
+        if (!document.getElementById(i)){
+          e.async = 1;
+          e.src = u;
+          e.id = i;
+          f.parentNode.insertBefore(e, f);
+        }
+        }(document.createElement('script'),
+        document.getElementsByTagName('script')[0],
+        scriptSrc,
+        'tb_loader_script');
+        if(window.performance && typeof window.performance.mark == 'function')
+        {window.performance.mark('tbl_ic');}
+    </script></head><body id="article-template" class="Article Topic-View"><!-- body-top --> <!-- google tag manager --> <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WGZCHF" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WGZCHF');</script> <!-- end google tag manager --><!-- end body-top --><a href="#main" id="skipLink">Skip to main content.</a><div class="banner-ad"><div id="A728"></div></div> <header id="mobile-header"> <a href="//education.seattlepi.com"> <svg height="40" width="25" viewbox="0 0 40 25" data-event="back nav"> <path style="stroke:black;stroke-width:5;fill:none;" d="M25 40 L3 20 L25 0"></path> </svg> </a> <a class="mobile-logo" href="https://www.seattlepi.com/"> <img src="/images/brand.png" alt="seattlepi.com" height="40px"> </a> </header> <header id="header" class="clearfix"> <nav id="siteNav" class="site-nav"> <div class="innerWrap"> <ul class="topnav"> <li class="subMenuContainer homeLink home" location="home"> <a class="subMenuLink" href="https://www.seattlepi.com/"> <img src="/images/brand.png" alt="seattlepi.com" class="png"> </a> </li> <li class="subMenuContainer "><a class="subMenuLink" href="https://www.seattlepi.com/local/">Local</a></li> <li class="subMenuContainer "><a class="subMenuLink" href="https://www.seattlepi.com/national/">U.S. & World</a></li> <li class="subMenuContainer "><a class="subMenuLink" href="https://www.seattlepi.com/business/">Business</a></li> <li class="subMenuContainer "><a class="subMenuLink" href="https://www.seattlepi.com/sports/">Sports</a></li> <li class="subMenuContainer "><a class="subMenuLink" href="https://www.seattlepi.com/entertainment/">Entertainment</a></li> <li class="subMenuContainer "><a class="subMenuLink" href="https://www.seattlepi.com/lifestyle/">Life</a></li> <li class="subMenuContainer "><a class="subMenuLink" href="https://www.seattlepi.com/lifestyle/travel/deals/">Travel</a></li> <li class="subMenuContainer "><a class="subMenuLink" href="https://www.seattlepi.com/comics-and-games/">Comics</a></li> <li class="subMenuContainer "><a class="subMenuLink" href="https://www.seattlepi.com/photos/">Photos</a></li> <li class="subMenuContainer "><a class="subMenuLink" href="https://education.seattlepi.com">Education</a></li> <li class="subMenuContainer "><a class="subMenuLink" href="https://www.seattlepi.com/realestate/">Real Estate</a></li> </ul> </div> </header><div id="page"><div id="content" class="clearfix"><div id="main"> <header id="title" class="clearfix"> <div id="demand-ribbon"> <div id="content-brand" class="clearfix"> <span class="subnav-logo"><a href="//education.seattlepi.com" title="Education - Seattle PI">Education</a></span> </div> </div> <div class="writerName"> <h1>&nbsp;&nbsp;How to Write a Good Argumentative Essay Introduction</h1> </div> </header> <article id="article-section"> <div id="top-section" class=" clearfix"> <figure id="main-article-photo" class="article-image"> <a class="article-image-link" href="//img-aws.ehowcdn.com/600x600p/photos.demandstudios.com/getty/article/56/159/86514703.jpg" title="How to Write a Good Argumentative Essay Introduction"> <img src="//img-aws.ehowcdn.com/390x390p/photos.demandstudios.com/getty/article/56/159/86514703_XS.jpg" alt="A good argumentative essay starts with a line to catch the reader's attention." title="Jupiterimages/Goodshoot/Getty Images"> </a> <figcaption class="article-image-credits"> <p class="writerName"> <cite> Written by Soheila Battaglia </cite> </p> </figcaption> </figure> <div id="related-articles"> <h3>Related Articles</h3> <ul> <li><span>1 </span><a href="//education.seattlepi.com/write-essay-novel-1589.html">How to Write an Essay About a Novel</a></li> <li><span>2 </span><a href="//education.seattlepi.com/teacher-tips-write-thesis-statements-high-school-papers-3043.html">Teacher Tips: How to Write Thesis Statements for High School Papers</a></li> <li><span>3 </span><a href="//education.seattlepi.com/write-senseofplace-essay-2084.html">How to Write a Sense-of-Place Essay</a></li> <li><span>4 </span><a href="//education.seattlepi.com/write-college-expository-essay-1214.html">How to Write a College Expository Essay</a></li> </ul> </div> </div> <div id="section-0" class="section"> <p>A good introduction in an argumentative essay acts like a good opening statement in a trial. Just like a lawyer, a writer must present the issue at hand, give background, and put forth the main argument -- all in a logical, intellectual and persuasive way.</p> </div> <div class="inline-ad no-print"> <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> <!-- SPI_INLINE_LINK --> <ins class="adsbygoogle link-ad-mobile" style="min-width:300px;  width:100%;margin:auto;" data-ad-client="ca-pub-3235755782694080" data-ad-slot="1486261391" data-ad-format="link"></ins> <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> <!-- SPI_INLINE --> <ins class="adsbygoogle no-print inline-no-mobile" style="width:320px;max-width:1200px;height:125px" data-ad-client="ca-pub-3235755782694080" data-ad-slot="2433455140"></ins> <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> </div> <div id="section-1" class="section"> <h2>Start With a Hook</h2> <div id="section-2" class="section"> <p><p>Start your introduction with a sentence that gets the reader interested in the topic. To pique the reader's interest, you can begin with a quote, a personal story, a surprising statistic or an interesting question. For example, if you are arguing that smoking should be banned from all public places, you can start your introduction by referencing a statistic from a verified source: "Tobacco use kills more than five million people every year -- more than HIV/AIDS, tuberculosis and malaria combined, according to the World Health Organization." This strategy grabs the reader's attention while introducing the topic of the essay.</p></p> </div> </div> <div id="section-3" class="section"> <h2>Include Background</h2> <div id="section-4" class="section"> <p><p>Providing readers with background on the topic allows them to better understand the issue being presented. This information provides context and history that can be crucial to explaining and arguing your point. For example, if you are arguing that there should never be a military draft in the United States, your introduction can include information about the history of the U.S. draft and the events that led to it being abolished.</p></p> </div> </div> <div id="section-5" class="section"> <h2>State Your Thesis</h2> <div id="section-6" class="section"> <p><p>The thesis is the essence of an argumentative essay. In a single, clear sentence, it sums up what point you are trying to make. The thesis statement should assert a position on a particular issue -- one that a reader can potentially argue against. Therefore, the thesis cannot be a fact. For example, if a professor assigns the general topic of war, you can formulate the following thesis statement: "The United Nations must be redesigned because it is currently incapable of preventing wars." The rest of your essay serves to explain and provide evidence in support of your thesis statement.</p></p> </div> </div> <div id="section-7" class="section"> <h2>What to Leave Out</h2> <div id="section-8" class="section"> <p><p>A good introduction should not be describing arguments or providing analysis that belong in the body paragraphs. Your introduction should introduce and set up your point, rather than lay out evidence to support it. Also, while your intro is a road map for the rest of the essay, you shouldn't explicitly announce what and how you will be arguing: "I am going to prove to you that ..." This type of set up does not add any pertinent information and only serves as filler.</p></p> </div> </div><div class="main-ad"> <script>
+            var ad_height;
+            var VIEWPORT_WIDTH = document.documentElement.clientWidth || document.body.clientWidth;
+                if (VIEWPORT_WIDTH > 500) {
+                    ad_height = '456px';
+                } else {
+                    ad_height = '555px';
+                }
+        </script> <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> <!-- WORK_MAIN --> <ins id="ggads" class="adsbygoogle" style="display:inline-block;min-width:320px;max-width:1200px;width:100%;" data-ad-client="ca-pub-3235755782694080" data-ad-slot="3910188341"> </ins> <script>
+            document.getElementById('ggads').style.height = ad_height;
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script> </div> <div id="wacky"> <script>
+        var main = document.querySelector('#main');
+        var mainAds = document.querySelector('.main-ad');
+        if (mainAds.length < 1 || mainAds.style.height < 10) {
+           document.write('<div id="DMINSTR" type="adimpression" data-type="adTracking" name="&amp;adunit_id=3910188341&amp;ad_unit_type=CNT&amp;ad_unit_network=GAS&amp;revenue_basis=CPC&amp;ad_position=C2&amp;revenue_tag=pub-3235755782694080"> <div id="google-article-block" class="google-text"> <script type="text/javascript"> google_ad_channel = "3910188341"; google_ad_client = "pub-3235755782694080"; google_ad_output = "js"; google_max_num_ads = "4"; google_ad_type = "text"; google_image_size = "336x280"; google_feedback = "on"; google_skip = 1; google_url ="bottom"; google_class = "336x280"; google_label_text = "Ads"; </sc'+'ript> <script type="text/javascript" src="https://pagead2.googlesyndication.com/pagead/show_ads.js"></scr'+'ipt> </div></div>');
+           main.style.marginTop = '80px';
+        }
+        </script> </div> <!-- Taboola --> <div id="taboola-below-article-thumbnails"></div> <script type="text/javascript">
+      window._taboola = window._taboola || [];
+      _taboola.push({
+        mode: 'thumbnails-a',
+        container: 'taboola-below-article-thumbnails',
+        placement: 'Below Article Thumbnails - Demand',
+        target_type: 'mix'
+      });
+    </script> <div class="s2nPlayer k-N4SJ5djj" data-type="float"></div><script type="text/javascript" src="//embed.sendtonews.com/player3/embedcode.js?fk=N4SJ5djj&cid=8395&offsetx=0&offsety=0&floatwidth=400&floatposition=bottom-right" data-type="s2nScript"></script> <div id="references" class="section"> <h4>References</h4> <ul><li><a href="http://www.usu.edu/markdamen/WritingGuide/24intro.htm" rel="nofollow">Utah State University Writing Guide: Introduction and Conclusion</a></li><li><a href="http://web.clark.edu/martpe/writing_strong_argument_papers.htm" rel="nofollow">Clark College: Writing Strong Argument Papers</a></li><li><a href="http://owl.english.purdue.edu/owl/resource/724/1/" rel="nofollow">Purdue University: Introductions, Body Paragraphs, and Conclusions for an Argument Paper</a></li><li><a href="http://www.who.int/features/factfiles/tobacco/en" rel="nofollow">World Health Organization: 10 Facts on Second-hand Smoke</a></li></ul> </div> <div id="author" class="section"> <h4>About the Author</h4> <p>Soheila Battaglia is a published and award-winning author and filmmaker. She holds an MA in literary cultures from New York University and a BA in ethnic studies from UC Berkeley. She is a college professor of literature and composition.</p> </div> <div id="photo-credits" class="section"> <h4>Photo Credits</h4> <ul> <li> Jupiterimages/Goodshoot/Getty Images</li> </ul> </div> <div class="section"> <div ub-in-page="5a8cd852b07f241698699142"></div> </div> </article> <div id="google-mobile-pinned"></div> </div> <aside id="sidebar"> <div id="link-unit" class="widget clearfix"> <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> <!-- SPI_LINK --> <script>
+            var rightRailLinkAd = '<ins class="adsbygoogle" style="display:block; height:190px; width: 100%; max-height: 190px;" data-ad-client="ca-pub-3235755782694080" data-ad-slot="8737394984" data-ad-format="link"></ins>'
+            function setRightRailLinkAd() {
+                var rightRailLinkAdContainer = document.querySelector('#sidebar #link-unit');
+                rightRailLinkAdContainer.innerHTML = rightRailLinkAd;
+            }
+            if (VIEWPORT_WIDTH > 775) {
+                setRightRailLinkAd();
+            }
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            adsbygoogle.push({});
+        </script> </div> <div class="ad widget"><div id="A300"></div></div> <div id="popular-articles" class="thumbnails widget"> <h3>What's Hot</h3> <ul> <li class="clearfix"><a href="//education.seattlepi.com/write-essay-ged-test-1113.html"> <img src="//img-aws.ehowcdn.com/130x87/photos.demandstudios.com/getty/article/104/251/200309981-001.jpg" alt="How to Write an Essay for the GED Test" width="130" height="87"> <span class="clearfix">How to Write an Essay for the GED Test</span> </a></li> <li class="clearfix"><a href="//education.seattlepi.com/write-persuasive-essay-1445.html"> <img src="//img-aws.ehowcdn.com/130x87/photos.demandstudios.com/getty/article/153/87/sb10069478az-001.jpg" alt="How to Write a Persuasive Essay" width="130" height="87"> <span class="clearfix">How to Write a Persuasive Essay</span> </a></li> <li class="clearfix"><a href="//education.seattlepi.com/make-conclusion-social-studies-essay-5864.html"> <img src="//img-aws.ehowcdn.com/130x87/photos.demandstudios.com/getty/article/151/225/78429808.jpg" alt="How to Make a Conclusion for a Social Studies Essay" width="130" height="87"> <span class="clearfix">How to Make a Conclusion for a Social Studies Essay</span> </a></li> <li class="clearfix"><a href="//education.seattlepi.com/write-explanation-essay-1739.html"> <img src="//img-aws.ehowcdn.com/130x87/photos.demandstudios.com/getty/article/84/233/87697988.jpg" alt="How to Write an Explanation Essay" width="130" height="87"> <span class="clearfix">How to Write an Explanation Essay</span> </a></li> </ul> </div> <div class="ad widget"><div id="B300"></div></div> <div id="more-articles" class="thumbnails widget"> <h3>More Articles</h3> <ul> <li class="clearfix"><a href="//education.seattlepi.com/write-college-critical-thinking-essay-1197.html"> <img src="//img-aws.ehowcdn.com/130x87/photos.demandstudios.com/getty/article/117/5/78520757.jpg" alt="How to Write a College Critical Thinking Essay" width="130" height="87"> <span class="clearfix">How to Write a College Critical Thinking Essay</span> </a></li> <li class="clearfix"><a href="//education.seattlepi.com/main-points-used-write-comparison-essay-2475.html"> <img src="//img-aws.ehowcdn.com/130x87/photos.demandstudios.com/getty/article/110/228/87651028.jpg" alt="What Are the Main Points Used to Write a Comparison Essay?" width="130" height="87"> <span class="clearfix">What Are the Main Points Used to Write a Comparison Essay?</span> </a></li> <li class="clearfix"><a href="//education.seattlepi.com/write-intro-paragraph-literary-elements-essay-1630.html"> <img src="//img-aws.ehowcdn.com/130x87/photos.demandstudios.com/getty/article/81/34/86543833.jpg" alt="How to Write the Intro Paragraph of a Literary Elements Essay" width="130" height="87"> <span class="clearfix">How to Write the Intro Paragraph of a Literary Elements Essay</span> </a></li> <li class="clearfix"><a href="//education.seattlepi.com/develop-write-paragraph-3825.html"> <img src="//img-aws.ehowcdn.com/130x87/photos.demandstudios.com/getty/article/104/131/200171399-001.jpg" alt="How to Develop and Write a Paragraph" width="130" height="87"> <span class="clearfix">How to Develop and Write a Paragraph</span> </a></li> <li class="clearfix"><a href="//education.seattlepi.com/after-dinner-speech-topics-college-class-1847.html"> <img src="//img-aws.ehowcdn.com/130x87/photos.demandstudios.com/getty/article/45/246/stk147099rke.jpg" alt="After Dinner Speech Topics for a College Class" width="130" height="87"> <span class="clearfix">After Dinner Speech Topics for a College Class</span> </a></li> <li class="clearfix"><a href="//education.seattlepi.com/write-thesis-process-analysis-essay-2052.html"> <img src="//img-aws.ehowcdn.com/130x87/photos.demandstudios.com/getty/article/171/209/82153575.jpg" alt="How to Write a Thesis for a Process Analysis Essay" width="130" height="87"> <span class="clearfix">How to Write a Thesis for a Process Analysis Essay</span> </a></li> </ul> </div> <div class="ad widget"><div id="S300"></div></div> </aside> </div><footer> <div class="hst-sitefooter clearfix"> <div class="pagecontent faux-21"> <div id="piBottomInfo"> <p><b>Reader Services:</b> <a href="https://reg.seattlepi.com/login/">My account</a> | <!-- <a href="https://m.seattlepi.com">Mobile</a>--> <a href onclick="hdnToggleMobile(); return false;">Mobile</a> | <a href="https://www.seattlepi.com/rss/">RSS feeds</a> | <a href="https://www.seattlepi.com/twitter/">Follow us on Twitter</a> | <a href="https://www.seattlepi.com/twitter/">Facebook</a> | <a href="https://www.seattlepi.com/newsletters/">E-mail newsletters</a> </p> <p><b>Company Info:</b> <a href="https://www.seattlepi.com/privacy/">Privacy Notice</a> | <a href="https://www.seattlepi.com/privacy/#caprivacyrights">Your California Privacy Rights</a> | <a href="https://www.seattlepi.com/privacy/#interestbasedads">Interest Based Ads</a> | <a href="https://www.seattlepi.com/terms/">Terms of Use</a> | <a href="https://hearstmediaservices.com/market/seattle/">Advertise online</a> | <a href="https://www.seattlepi.com/pistaff/">Contact us</a> | <a href="https://www.seattlepi.com/pisubmit">Send us tips</a> | <a href="https://www.seattlepi.com/pijobs/">Job openings</a> | <a href="https://www.seattlepi.com/facts/">About the P-I</a> | <a href="https://www.hearst.com">Hearst Corp.</a> | <a href="https://www.seattlepi.com/advertising/">About our ads</a></p> <p><b>Advertising Services:</b> <a href="http://www.localedgemedia.com">SEO</a> by LocalEdge | <a href="https://www.metrix4media.com">PPC Management</a> by Metrix4Media | <a href="https://www.aboutads.info/choices/"><span>Ad Choices <img src="https://extras.chron.com/i/adchoices.png" width="14" height="18" style="margin-bottom:-5px;"> </span> </a></p> </div> <div id="piFoot"><p>Send comments to <a href="mailto:newmedia@seattlepi.com">newmedia@seattlepi.com</a></p></div> </div> <p>&copy; 2019 Hearst Seattle Media, LLC<br> <img src="/images/hearst_logo.png" class="png" alt="Hearst Newspapers"> </p> </div> </footer></div> <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script> <script>
+WebFont.load({
+google: {
+    families: ['Roboto']
+}
+});
+</script> <script type="text/javascript" src="//nexus.ensighten.com/hearst/news-3p/Bootstrap.js"></script> <script type="text/javascript">
+  window._taboola = window._taboola || [];
+  _taboola.push({flush: true});
+</script> </body> </html>

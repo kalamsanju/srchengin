@@ -1,0 +1,2120 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    
+
+    
+
+<title>example thesis statements for essays, Ask</title>
+
+
+
+
+
+    
+
+<link rel="stylesheet" type="text/css" href="/s/0-2-81/site-ask-sites-askuk-web-page-rs-test.css"/>
+    
+    <script>
+        var App = {};
+        App.events = [];
+        
+        function loadEvent(fn,partial) {
+            App.events.push({
+                partial:partial || "",
+                contextSelector: document,
+                elementSelector: null,
+                type: "ready",
+                handler:fn
+            });
+        }
+        var $ = window.$||loadEvent;
+    </script>
+    
+
+    
+
+
+<style>
+        .content-visible {
+            visibility: hidden;
+        }
+    </style>
+
+    <noscript>
+        <style type="text/css">
+            .content-visible {
+                visibility: visible !important;
+            }
+        </style>
+    </noscript>
+
+<script>
+    (function (G, o, O, g, L, e) {
+        G[g] = G[g] || function () {
+                    (G[g]['q'] = G[g]['q'] || []).push(arguments)
+                }, G[g]['t'] = 1 * new Date;
+        L = o.createElement(O), e = o.getElementsByTagName(O)[0];
+        L.async = 1;
+        L.src = '//www.google.com/adsense/search/async-ads.js';
+        e.parentNode.insertBefore(L, e)
+    })(window, document, 'script', '_googCsa');
+</script>
+
+<script>
+        
+    var ask = (typeof ask === 'undefined') ? {} : ask;
+        
+    ask.CSA = {};
+
+        
+    ask.unified = ask.unified || {};
+    ask.unified.pending = ask.unified.pending || [];
+    ask.unified.pending.push("CSA");
+    ask.unified.pendingProviders = ask.unified.pendingProviders || {};
+
+    (function () {
+        var _logInConsole = false,
+                _csaStartTime = new Date(), 
+                _csaResponseTime = null,
+                _domReady = false,
+                _showSerpTimeoutCleared = false,
+                _showSerpTimeoutLength = 3000,
+                _showSerpTimer = null,
+                _log = function () {
+                    if (false && window.console && console.log) {
+                        console.log(Array.prototype.slice.call(arguments));
+                    }
+                },
+            
+                _domCallbacks = [],
+            
+            
+                _csaCallbacksObjects = [];
+
+        
+        ask.CSA.startTime = _csaStartTime;
+        ask.CSA.responseReceived = false;
+        ask.CSA.adsShown = false;
+        ask.CSA.responseTime = null; 
+        ask.CSA.adsShownTime = null; 
+        ask.CSA.domReadyTime = null; 
+        ask.CSA.serpShownTime = null; 
+        ask.CSA.serpVisible = false;
+        ask.CSA.showSerpTimeoutFired = false;
+        ask.CSA.showSerpTimeoutLength = _showSerpTimeoutLength;
+        ask.CSA.showSerpStartTime = null;
+        ask.CSA.numTopAds = null;
+        ask.CSA.numBottomAds = null;
+        ask.CSA.adDepth = null;
+        ask.CSA.serpHiddenPreAds = null;
+        ask.CSA.serpShownPostAds = null;
+        ask.CSA.viewportHeight = null;
+        ask.CSA.viewportWidth = null;
+        ask.CSA.centerRailHeight = null;
+        ask.CSA.centerRailWidth = null;
+        ask.CSA.rightRailHeight = null;
+        ask.CSA.rightRailWidth = null;
+        ask.CSA.csaHeight = null;
+        ask.CSA.csaWidth = null;
+        ask.CSA.adContentRatio = null;
+        ask.CSA.calculateAdContentMetrics = null;
+
+        
+
+        ask.CSA.addCSALoadCallback = function (adsCb, timeoutCb, timeoutValue) {
+            _log("addCSALoadCallback", adsCb, timeoutCb, timeoutValue);
+            var callbackObj = null;
+
+            if (typeof adsCb !== "function") {
+                return;
+            }
+
+            callbackObj = {adsCb: adsCb, timeoutCb: timeoutCb, timeoutValue: timeoutValue, timeout: null};
+
+            if (ask.CSA.adsShown) {
+                
+                adsCb();
+            } else {
+
+                if (typeof timeoutCb === "function" && timeoutValue > 0) {
+
+                    callbackObj.timeout = setTimeout(function () {
+                        
+                        var idx = _csaCallbacksObjects.indexOf(callbackObj);
+                        if (idx > -1) {
+                            handleCallbackTimeout(callbackObj);
+                        }
+                    }, timeoutValue);
+
+                }
+
+                
+                _csaCallbacksObjects.push(callbackObj);
+            }
+        };
+
+        
+        ask.CSA.startShowSerpTimeout = function () {
+            _log("startShowSerpTimeout", _showSerpTimeoutLength);
+            _showSerpTimer = setTimeout(handleSerpTimeout, _showSerpTimeoutLength);
+            ask.CSA.showSerpStartTime = new Date() - _csaStartTime;
+        };
+
+        
+        ask.CSA.domReady = function () {
+            _log("domReady");
+            _domReady = true;
+            ask.CSA.domReadyTime = new Date() - _csaStartTime;
+            invokeCallbacks(_domCallbacks);
+        };
+
+        ask.CSA.showSerp = makeSerpVisible;
+
+        ask.CSA.handleTopAdsLoaded = function (containerName, adsLoaded) {
+            _log("handleTopAdsLoaded " + adsLoaded);
+
+            addBackgroundColor(adsLoaded, containerName, ask.CSA.adblock1["colorBackground"]);
+
+            ask.CSA.adsShown = true;
+            ask.CSA.adsShownTime = new Date() - _csaStartTime;
+
+            makeSerpVisible();
+
+            fireCSACallbacks();
+        };
+
+        ask.CSA.handleNoTopAdsLoaded = noAdLoadedCallback;
+
+        ask.CSA.handleBottomAdsLoaded = function (containerName, adsLoaded) {
+            _log("handleBottomAdsLoaded " + adsLoaded);
+
+            addBackgroundColor(adsLoaded, containerName, ask.CSA.adblock2["colorBackground"]);
+        };
+
+        ask.CSA.handleNoBottomAdsLoaded = noAdLoadedCallback;
+
+        ask.CSA.handleCSAResponse = function (numAdsMap) {
+            _log("handleCSAResponse " + numAdsMap);
+            
+
+            ask.CSA.responseTime = new Date() - _csaStartTime;
+
+            
+            if (numAdsMap["text-ad-block-0"] != undefined) {
+                ask.CSA.numTopAds = numAdsMap["text-ad-block-0"];
+                ask.CSA.adDepth = ask.CSA.numTopAds;
+            }
+
+            if (numAdsMap["text-ad-block-1"] != undefined) {
+                ask.CSA.numBottomAds = numAdsMap["text-ad-block-1"];
+            }
+
+            if (ask.CSA.adDepth < ask.CSA.numBottomAds) {
+                ask.CSA.adDepth = ask.CSA.numBottomAds;
+            }
+
+            if (_domReady) {
+                processAdResponse();
+            } else {
+                _domCallbacks.push(processAdResponse);
+            }
+        };
+
+        function processAdResponse() {
+            _log("processAdResponse");
+
+            ask.CSA.responseReceived = true;
+
+            
+            setCSAMetaDataCookie();
+
+            
+}
+
+        function isSerpVisible() {
+            
+            var visible = false,
+                    selectors = ["#midblock", "#rightblock", "#mobile-footer", ".mobile-web-results", ".hcsa", ".content-visible"],
+                    elems = null;
+
+            for (var i = 0; i < selectors.length; i++) {
+                if (visible) continue;
+
+                try {
+                    elems = document.querySelectorAll(selectors[i]);
+                } catch (e) {
+                    _log("Error fetching serp elements: " + e);
+                }
+
+                if (elems) {
+                    for (var j = 0; j < elems.length; j++) {
+                        visible = (visible || isVisible(elems[j]));
+                    }
+                }
+            }
+
+            return visible;
+        }
+
+        function isVisible(elem) {
+            var outOfFlow = (elem.offsetWidth !== 0 || elem.offsetHeight !== 0),
+                    invisible = false;
+            try {
+                invisible = (window.getComputedStyle(elem).getPropertyValue("visibility") === "hidden");
+            } catch (e) {
+                _log("Error getting style of elem: " + e);
+            }
+
+            return outOfFlow || invisible;
+        }
+
+        function makeSerpVisible() {
+            if (ask.CSA.serpVisible) return;
+            _log("makeSerpVisible");
+            var css = '#midblock,#rightblock,#mobile-footer,.mobile-web-results,.hcsa,.content-visible { visibility:visible;}';
+            var head = document.getElementsByTagName('head')[0];
+            var style = document.createElement('style');
+            style.type = 'text/css';
+            if (style.styleSheet) {
+                style.styleSheet.cssText = css;
+            } else {
+                style.appendChild(document.createTextNode(css));
+            }
+            head.appendChild(style);
+
+            
+            if (!_showSerpTimeoutCleared) {
+                clearTimeout(_showSerpTimer);
+                _showSerpTimeoutCleared = true;
+            }
+
+            ask.CSA.serpVisible = true;
+            ask.CSA.serpShownTime = new Date() - _csaStartTime;
+        }
+
+        
+        function setCSAMetaDataCookie() {
+            document.cookie = 'adDepth=' + ask.CSA.adDepth + ";path=/;domain=.ask.com";
+            document.cookie = 'ad_cnt=' + (ask.CSA.numTopAds + ask.CSA.numBottomAds) + ";path=/;domain=.ask.com";
+        }
+
+        function updateMonitoringHash() {
+            _log("updateMonitoringHash");
+            var topAds = ask.CSA.numTopAds || 0,
+                    bottomAds = ask.CSA.numBottomAds || 0,
+                    hash = "num_ads_top=" + topAds +
+                            "&num_ads_bottom=" + bottomAds +
+                            "&total_num_ads=" + (topAds + bottomAds) +
+                            "&content_hidden_pre_ads=" + (ask.CSA.serpHiddenPreAds ? 1 : 0) +
+                            "&content_shown_post_ads=" + (ask.CSA.serpShownPostAds ? 1 : 0) +
+                            "&ads_response_time_ms=" + ask.CSA.responseTime;
+            window.location.hash = hash;
+        }
+
+        function updateMonitoringElement() {
+            _log("updateMonitoringElement");
+            var topAds = ask.CSA.numTopAds || 0,
+                    bottomAds = ask.CSA.numBottomAds || 0,
+                    body = document.getElementsByTagName("body")[0],
+                    elem = document.createElement("div");
+
+            
+            elem.setAttribute("id", "csa-monitor-data");
+            elem.setAttribute("style", "visibility: hidden;");
+            elem.setAttribute("data-num_ads_top", topAds);
+            elem.setAttribute("data-num_ads_bottom", bottomAds);
+            elem.setAttribute("data-total_num_ads", topAds + bottomAds);
+            elem.setAttribute("data-content_hidden_pre_ads", ask.CSA.serpHiddenPreAds ? 1 : 0);
+            elem.setAttribute("data-content_shown_post_ads", ask.CSA.serpShownPostAds ? 1 : 0);
+            elem.setAttribute("data-ads_response_time_ms", ask.CSA.responseTime);
+
+            
+            body.appendChild(elem);
+        }
+
+        function noAdLoadedCallback(containerName, adsLoaded) {
+            _log("noAdLoadedCallback");
+
+            function process() {
+                var adContainer = document.getElementById(containerName);
+
+                if (adContainer)
+                    adContainer.style.display = "none";
+
+                makeSerpVisible();
+            }
+
+            if (_domReady) {
+                process();
+            } else {
+                _domCallbacks.push(process);
+            }
+
+        }
+
+        function addBackgroundColor(adsLoaded, containerName, shadeSelector) {
+            var adElement = document.getElementById(containerName);
+            if (adElement) {
+                adElement.style.backgroundColor = shadeSelector;
+            }
+        }
+
+        function handleCallbackTimeout(callbackObj) {
+            _log("handleCallbackTimeout", callbackObj);
+            clearTimeout(callbackObj.timeout);
+            callbackObj.timeoutCb();
+        }
+
+        function handleSerpTimeout() {
+            _log("handleSerpTimeout");
+            makeSerpVisible();
+            ask.CSA.showSerpTimeoutFired = true;
+            _showSerpTimeoutCleared = true;
+        }
+
+        function fireCSACallbacks() {
+            _log("fireCSACallbacks");
+            var csaCallbacks = [];
+
+            
+            for (var i = 0; i < _csaCallbacksObjects.length; i++) {
+                csaCallbacks.push(_csaCallbacksObjects[i].adsCb);
+                clearTimeout(_csaCallbacksObjects[i].timeout);
+            }
+
+            
+            _csaCallbacksObjects = [];
+            _log("csaCallbacks: ", csaCallbacks);
+            invokeCallbacks(csaCallbacks);
+        }
+
+        function invokeCallbacks(callbacks) {
+            if (callbacks.length) {
+                for (var i = 0; i < callbacks.length; i++) {
+                    if (typeof callbacks[i] == "function") {
+                        _log("invoking callback " + i);
+                        try {
+                            callbacks[i].call(null);
+                        } catch (e) {
+                            
+                        }
+                    }
+                }
+                
+                callbacks.splice(0, callbacks.length);
+            }
+        }
+
+        function formatClicktrackUrl(adBlock, adBlockName) {
+            if (!adBlock.clicktrackUrl && adBlock.clicktrackSearch && adBlockName) {
+                var generatedClickTrackUrl = adBlockName === "topAdBlock" ?
+                        "https://uk.ask.com/web/_clk?qsrc=990&qo=&gclid=&askid=&isSemPixelEnabled=true&pl=%7B%22anuaafl%22%3A%22761443%22%2C%22anuadc%22%3A%22usw2%22%2C%22anuaqs%22%3A%22%22%2C%22anxu%22%3A%22http%3A%2F%2Fuk.ask.com%2Fweb%3Fqo%3DsemQuery%26ad%3DsemA%26q%3Dexample%2520thesis%2520statements%2520for%2520essays%26o%3D761443%26ag%3Dfw%26an%3Dgoogle_s%26rch%3Dnl16%22%2C%22anuaad%22%3A%22semA%22%2C%22anuapbr%22%3A%22google.com%22%2C%22anuaan%22%3A%22google_s%22%2C%22anuaamt%22%3A%22%22%2C%22anuaagc%22%3A%22fw%22%2C%22anuaadid%22%3A%22%22%2C%22anuaptp%22%3A%22resultsPage%22%2C%22anuachl%22%3A%22web%22%2C%22anuasv%22%3A%22v1%22%2C%22anuaprdd%22%3A%22search%22%2C%22anxa%22%3A%22Archie_Askint%22%2C%22anxp%22%3A%22ask.com%22%2C%22anualcl%22%3A%22gb%22%2C%22anuaapp%22%3A%22%7B%5C%22zoneName%5C%22%3A%5C%22center%5C%22%2C%5C%22moduleName%5C%22%3A%5C%22gslTop%5C%22%2C%5C%22providerSource%5C%22%3A%5C%22csa%5C%22%2C%5C%22resultType%5C%22%3A%5C%22gsl%5C%22%2C%5C%22metaInfo%5C%22%3A%7B%5C%22adType%5C%22%3A%5C%22csa%5C%22%2C%5C%22client%5C%22%3A%5C%22aj-nl3-img%5C%22%2C%5C%22clientChannel%5C%22%3A%5C%22nl16%5C%22%7D%2C%5C%22pageViewId%5C%22%3A%5C%22b286c6cf88dbeb48574851a51e9aaadc%5C%22%2C%5C%22queryOrigination%5C%22%3A%5C%22semQuery%5C%22%2C%5C%22templateId%5C%22%3A%5C%22desktop%5C%22%2C%5C%22queryTerm%5C%22%3A%5C%22example%20thesis%20statements%20for%20essays%5C%22%2C%5C%22category%5C%22%3A%5C%22Education%5C%22%7D%22%2C%22anuapn%22%3A1%2C%22anuaptl%22%3A%22%22%7D&csaClick=true" :
+                        "https://uk.ask.com/web/_clk?qsrc=990&qo=&gclid=&askid=&isSemPixelEnabled=true&pl=%7B%22anuaafl%22%3A%22761443%22%2C%22anuadc%22%3A%22usw2%22%2C%22anuaqs%22%3A%22%22%2C%22anxu%22%3A%22http%3A%2F%2Fuk.ask.com%2Fweb%3Fqo%3DsemQuery%26ad%3DsemA%26q%3Dexample%2520thesis%2520statements%2520for%2520essays%26o%3D761443%26ag%3Dfw%26an%3Dgoogle_s%26rch%3Dnl16%22%2C%22anuaad%22%3A%22semA%22%2C%22anuapbr%22%3A%22google.com%22%2C%22anuaan%22%3A%22google_s%22%2C%22anuaamt%22%3A%22%22%2C%22anuaagc%22%3A%22fw%22%2C%22anuaadid%22%3A%22%22%2C%22anuaptp%22%3A%22resultsPage%22%2C%22anuachl%22%3A%22web%22%2C%22anuasv%22%3A%22v1%22%2C%22anuaprdd%22%3A%22search%22%2C%22anxa%22%3A%22Archie_Askint%22%2C%22anxp%22%3A%22ask.com%22%2C%22anualcl%22%3A%22gb%22%2C%22anuaapp%22%3A%22%7B%5C%22zoneName%5C%22%3A%5C%22center%5C%22%2C%5C%22moduleName%5C%22%3A%5C%22gslBottom%5C%22%2C%5C%22providerSource%5C%22%3A%5C%22csa%5C%22%2C%5C%22resultType%5C%22%3A%5C%22gsl%5C%22%2C%5C%22metaInfo%5C%22%3A%7B%5C%22adType%5C%22%3A%5C%22csa%5C%22%2C%5C%22client%5C%22%3A%5C%22aj-nl3-img%5C%22%2C%5C%22clientChannel%5C%22%3A%5C%22nl16%5C%22%7D%2C%5C%22pageViewId%5C%22%3A%5C%22b286c6cf88dbeb48574851a51e9aaadc%5C%22%2C%5C%22queryOrigination%5C%22%3A%5C%22semQuery%5C%22%2C%5C%22templateId%5C%22%3A%5C%22desktop%5C%22%2C%5C%22queryTerm%5C%22%3A%5C%22example%20thesis%20statements%20for%20essays%5C%22%2C%5C%22category%5C%22%3A%5C%22Education%5C%22%7D%22%2C%22anuapn%22%3A1%2C%22anuaptl%22%3A%22%22%7D&csaClick=true";
+
+                adBlock.clicktrackUrl = generatedClickTrackUrl;
+                delete adBlock.clicktrackSearch;
+            }
+            return adBlock;
+        }
+
+        _googCsa('jsLoadedCallback', function () {
+            var csaData = JSON.parse('{"pageOptions":{"pubId":"aj-nl3-img","suspectClientID":"","firstShadowChannel":"","instantPreviews":false,"adPage":"1","attributionSpacingBelow":"7","location":false,"domainLinkAboveDescription":true,"adtest":"off","rightHandAttribution":false,"offerExtension":false,"hl":"en","oe":"utf-8","adsafe":"medium","isAndroidTablet":false,"ie":"utf-8","linkTarget":"_blank","clickToCall":false,"numRepeated":"4","sellerRatings":true,"siteLinks":true,"heightConstrained":false,"plusOnes":false,"styleId":"3664299758","channel":"nl16","query":"example thesis statements for essays"},"clickTrackUrlBase":"https://uk.ask.com/web/_clk?","topAdBlock":{"colorAttribution":"#333333","colorDomainLink":"#0E7744","width":"99.5%","clickableBackgrounds":true,"colorText":"#333333","container":"text-ad-block-0","longerHeadlines":true,"colorBackground":"#FFFFFF","colorBorder":"#FFFFFF","colorAdSeparator":"#FFFFFF","maxTop":"4","fontSizeTitle":"18","fontSizeDescription":"13","fontSizeDomainLink":"14","fontSizeAttribution":"13","lineHeightTitle":"24","lineHeightDescription":"18","lineHeightDomainLink":"18","verticalSpacing":"16","detailedAttribution":true,"colorTitleLink":"#3300b5","clicktrackSearch":"qsrc=990&qo=&gclid=&askid=&isSemPixelEnabled=true&pl=%7B%22anuaafl%22%3A%22761443%22%2C%22anuadc%22%3A%22usw2%22%2C%22anuaqs%22%3A%22%22%2C%22anxu%22%3A%22http%3A%2F%2Fuk.ask.com%2Fweb%3Fqo%3DsemQuery%26ad%3DsemA%26q%3Dexample%2520thesis%2520statements%2520for%2520essays%26o%3D761443%26ag%3Dfw%26an%3Dgoogle_s%26rch%3Dnl16%22%2C%22anuaad%22%3A%22semA%22%2C%22anuapbr%22%3A%22google.com%22%2C%22anuaan%22%3A%22google_s%22%2C%22anuaamt%22%3A%22%22%2C%22anuaagc%22%3A%22fw%22%2C%22anuaadid%22%3A%22%22%2C%22anuaptp%22%3A%22resultsPage%22%2C%22anuachl%22%3A%22web%22%2C%22anuasv%22%3A%22v1%22%2C%22anuaprdd%22%3A%22search%22%2C%22anxa%22%3A%22Archie_Askint%22%2C%22anxp%22%3A%22ask.com%22%2C%22anualcl%22%3A%22gb%22%2C%22anuaapp%22%3A%22%7B%5C%22zoneName%5C%22%3A%5C%22center%5C%22%2C%5C%22moduleName%5C%22%3A%5C%22gslTop%5C%22%2C%5C%22providerSource%5C%22%3A%5C%22csa%5C%22%2C%5C%22resultType%5C%22%3A%5C%22gsl%5C%22%2C%5C%22metaInfo%5C%22%3A%7B%5C%22adType%5C%22%3A%5C%22csa%5C%22%2C%5C%22client%5C%22%3A%5C%22aj-nl3-img%5C%22%2C%5C%22clientChannel%5C%22%3A%5C%22nl16%5C%22%7D%2C%5C%22pageViewId%5C%22%3A%5C%22b286c6cf88dbeb48574851a51e9aaadc%5C%22%2C%5C%22queryOrigination%5C%22%3A%5C%22semQuery%5C%22%2C%5C%22templateId%5C%22%3A%5C%22desktop%5C%22%2C%5C%22queryTerm%5C%22%3A%5C%22example%20thesis%20statements%20for%20essays%5C%22%2C%5C%22category%5C%22%3A%5C%22Education%5C%22%7D%22%2C%22anuapn%22%3A1%2C%22anuaptl%22%3A%22%22%7D&csaClick=true"},"bottomAdBlock":{"colorAttribution":"#333333","colorDomainLink":"#0E7744","width":"99.5%","clickableBackgrounds":true,"colorText":"#333333","container":"text-ad-block-1","longerHeadlines":true,"colorBackground":"#FFFFFF","colorAdSeparator":"#FFFFFF","colorBorder":"#FFFFFF","number":"5","fontSizeTitle":"18","fontSizeDescription":"13","fontSizeDomainLink":"14","fontSizeAttribution":"13","lineHeightTitle":"24","lineHeightDescription":"18","lineHeightDomainLink":"18","verticalSpacing":"16","detailedAttribution":true,"colorTitleLink":"#3300b5","clicktrackSearch":"qsrc=990&qo=&gclid=&askid=&isSemPixelEnabled=true&pl=%7B%22anuaafl%22%3A%22761443%22%2C%22anuadc%22%3A%22usw2%22%2C%22anuaqs%22%3A%22%22%2C%22anxu%22%3A%22http%3A%2F%2Fuk.ask.com%2Fweb%3Fqo%3DsemQuery%26ad%3DsemA%26q%3Dexample%2520thesis%2520statements%2520for%2520essays%26o%3D761443%26ag%3Dfw%26an%3Dgoogle_s%26rch%3Dnl16%22%2C%22anuaad%22%3A%22semA%22%2C%22anuapbr%22%3A%22google.com%22%2C%22anuaan%22%3A%22google_s%22%2C%22anuaamt%22%3A%22%22%2C%22anuaagc%22%3A%22fw%22%2C%22anuaadid%22%3A%22%22%2C%22anuaptp%22%3A%22resultsPage%22%2C%22anuachl%22%3A%22web%22%2C%22anuasv%22%3A%22v1%22%2C%22anuaprdd%22%3A%22search%22%2C%22anxa%22%3A%22Archie_Askint%22%2C%22anxp%22%3A%22ask.com%22%2C%22anualcl%22%3A%22gb%22%2C%22anuaapp%22%3A%22%7B%5C%22zoneName%5C%22%3A%5C%22center%5C%22%2C%5C%22moduleName%5C%22%3A%5C%22gslBottom%5C%22%2C%5C%22providerSource%5C%22%3A%5C%22csa%5C%22%2C%5C%22resultType%5C%22%3A%5C%22gsl%5C%22%2C%5C%22metaInfo%5C%22%3A%7B%5C%22adType%5C%22%3A%5C%22csa%5C%22%2C%5C%22client%5C%22%3A%5C%22aj-nl3-img%5C%22%2C%5C%22clientChannel%5C%22%3A%5C%22nl16%5C%22%7D%2C%5C%22pageViewId%5C%22%3A%5C%22b286c6cf88dbeb48574851a51e9aaadc%5C%22%2C%5C%22queryOrigination%5C%22%3A%5C%22semQuery%5C%22%2C%5C%22templateId%5C%22%3A%5C%22desktop%5C%22%2C%5C%22queryTerm%5C%22%3A%5C%22example%20thesis%20statements%20for%20essays%5C%22%2C%5C%22category%5C%22%3A%5C%22Education%5C%22%7D%22%2C%22anuapn%22%3A1%2C%22anuaptl%22%3A%22%22%7D&csaClick=true"}}'),
+pageOptions = ask.CSA.pageOptions = csaData.pageOptions,
+                    csaArgs = ['ads'];
+
+            csaData.pageOptions.query = decodeURIComponent(csaData.pageOptions.query);
+
+            if (!pageOptions && csaData.topAdBlock) {
+                return;  
+            }
+            pageOptions['adsResponseCallback'] = ask.CSA.handleCSAResponse;
+            csaArgs.push(pageOptions);
+
+            ask.CSA.adblock1 = formatClicktrackUrl(csaData.topAdBlock, "topAdBlock");
+            ask.CSA.adblock1['noAdLoadedCallback'] = ask.CSA.handleNoTopAdsLoaded;
+            ask.CSA.adblock1['adLoadedCallback'] = ask.CSA.handleTopAdsLoaded;
+            csaArgs.push(ask.CSA.adblock1);
+
+            if (ask.unified) {
+                var maxTop = parseInt(ask.CSA.adblock1.maxTop);
+                var adNumber = ask.CSA.adblock1.number ? parseInt(ask.CSA.adblock1.number) : 0;
+            
+                ask.unified.pendingProviders["gsl"] = {
+                    "shadingHex": ask.CSA.adblock1.colorBackground ? ask.CSA.adblock1.colorBackground : "#FFFFFF",
+                    "client": pageOptions.pubId,
+                    "clientChannel": pageOptions.channel,
+                    "providerSource": "csa",
+                    "adRepeat": (pageOptions.numRepeated) ? true : false,
+                    "clickableSpace": ask.CSA.adblock1.clickableBackgrounds,
+                    "resultsReq": (maxTop > 0) ?  maxTop : adNumber,
+                    "timeout": ask.CSA.showSerpTimeoutLength ? ask.CSA.showSerpTimeoutLength : 0
+                };
+            }
+
+            if (csaData.bottomAdBlock) {
+                ask.CSA.adblock2 = formatClicktrackUrl(csaData.bottomAdBlock, "bottomAdBlock");
+                ask.CSA.adblock2['noAdLoadedCallback'] = ask.CSA.handleNoBottomAdsLoaded;
+                ask.CSA.adblock2['adLoadedCallback'] = ask.CSA.handleBottomAdsLoaded;
+                csaArgs.push(ask.CSA.adblock2);
+
+                if (ask.unified) {
+                    ask.unified.pendingProviders["gsl"].resultsReq += parseInt(ask.CSA.adblock2.number);
+                }
+            }
+
+            try {
+                _googCsa.apply(window, csaArgs);
+            } catch (err) {
+                ask.CSA.showSerp();
+            }
+        });
+    })();
+
+
+</script>
+
+<script>
+
+    if (App) {
+        ask.CSA.isDomReadyCalled = false;
+        (function () {
+            App.events = App.events || [];
+            App.events.push({
+                partial: "partial-text-ad-configuration",
+                contextSelector: document,
+                elementSelector: null,
+                type: "ready",
+                handler: function () {
+                    if (!ask.CSA.isDomReadyCalled) {
+                        ask.CSA.isDomReadyCalled = true;
+                        ask.CSA.domReady();
+                    }
+                }
+            });
+
+            
+})();
+    }
+</script>
+
+
+<style type="text/css">
+    
+
+.l-right-content .PartialSearchResults-container .PartialSearchResults-item-title-link {
+            color: #333333;
+        }
+    
+
+
+</style>
+
+
+
+<script>
+        !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+                n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+                n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+                t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+                document,'script','https://connect.facebook.net/en_US/fbevents.js');
+
+        
+
+fbq('init', '1236983599798824');
+        
+fbq('track', 'PageView');
+
+    </script>
+
+
+
+
+
+
+
+
+</head>
+<body>
+
+<div class="l-header">
+    <div class="l-header-container">
+        
+
+
+
+<script>
+        var isDataLayerDefined = (typeof dataLayer !== "undefined");
+
+        var dataObj = {
+            "ldid": "",
+            "channel": "web",
+            "affiliateid": "761443",
+            "sessionid": "1546810595",
+            "acquisitiondivision": "semA"
+        };
+
+            
+if (isDataLayerDefined) {
+            dataLayer.push(dataObj);
+        } else {
+            var dataLayer = [dataObj];
+        }
+
+    </script>
+
+    
+    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-T3KVMC" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer_temp'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-T3KVMC');</script>
+    
+
+
+
+
+
+<script>
+        
+        var dataLayer = dataLayer || [];
+        
+dataLayer.push({"":""});
+        
+</script>
+    
+        <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-N6G62CZ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-N6G62CZ');</script>
+    
+
+
+<div class="PartialLogo js-PartialLogo">
+
+    
+
+<div class="PartialLogo-image">
+            <a href='/?o=761443' data-unified='{"moduleName":"logo","resultType":"navigation","providerSource":"navigation","zoneName":"header","moduleInZone":1,"resultInModule":1}' data-qo='logo'>Ask.com</a></div>
+    
+</div>
+
+
+<div class="PartialSearchBox-wrapper ">
+    <div class="PartialSearchBox-container">
+        <form target="_top" action="/web" method="get" class="PartialSearchBox-form js-PartialSearchBox-form"
+              data-unified="{&quot;resultType&quot;:&quot;navigation&quot;,&quot;providerSource&quot;:&quot;navigation&quot;,&quot;zoneName&quot;:&quot;header&quot;,&quot;moduleName&quot;:&quot;searchBox&quot;,&quot;moduleInZone&quot;:2,&quot;resultInModule&quot;:1}">
+            <input type="hidden" id="origin" name="o" value="761443">
+            <input type="hidden" id="partnerID" name="l" value="dir">
+            <input type="hidden" id="qo" name="qo" value="serpSearchTopBox">
+            <input class="PartialSearchBox-input js-PartialSearchBox-input js-PartialSearchBox-input-logo"
+                   data-zone="header" validate="required" value="example thesis statements for essays" name="q" autocomplete="off" maxlength="2048"
+                   placeholder="">
+            <button class="PartialSearchBox-button js-PartialSearchBox-button" type="submit">
+                <div class="PartialSearchBox-button-magnifier"></div>
+            </button>
+        </form>
+        <div class="PartialSearchBox-clear js-PartialSearchBox-clear"></div>
+    </div>
+</div>
+
+<script>
+    'use strict';
+    if (App) {
+        (function () {
+            App.events = App.events || [];
+            App.events.push(
+                    {
+                        partial: "PartialSearchBox",
+                        contextSelector: ".PartialSearchBox-wrapper",
+                        elementSelector: ".js-PartialSearchBox-form",
+                        type: "submit",
+                        handler: function (e) {
+                            var $searchTextInputBox = $(".js-PartialSearchBox-input", this);
+                            if (!$searchTextInputBox.val()) {
+                                return false;
+                            }
+                        }
+                    },
+                    {
+                        partial: "PartialSearchBox",
+                        contextSelector: ".PartialSearchBox-wrapper",
+                        elementSelector: ".PartialSearchBox-container",
+                        type: "submit",
+                        handler: function (e) {
+                            var topForm = $(".js-PartialSearchBox-form", this),
+                                    searchPayload = topForm.data("unified");
+
+                            if (!searchPayload) {
+                                return;
+                            }
+                            searchPayload.actionType = "click";
+                            searchPayload.assetType = "searchBox";
+                            topForm.unbind(e);
+                            e.preventDefault();
+                            if (ask && ask.unified){
+                                ask.unified.sendAction(searchPayload, function () {
+                                    topForm.submit();
+                                });
+                            } else {
+                                topForm.submit();
+                            }
+                        }
+                    },
+                    {
+                        partial: "PartialSearchBox",
+                        contextSelector: ".PartialSearchBox-wrapper",
+                        elementSelector: null,
+                        type: "ready",
+                        handler: function () {
+                            var input = $(".js-PartialSearchBox-input", this),
+                                    clear = $(".js-PartialSearchBox-clear", this);
+                            if (clear) {
+                                _searchUtil.searchBoxClear(input, clear);
+                            }
+                        }
+                    },
+                    {
+                        partial: "PartialSearchBox",
+                        contextSelector: ".PartialSearchBox-wrapper",
+                        elementSelector: ".js-PartialSearchBox-input",
+                        type: "keydown",
+                        handler: function (e) {
+                            e.stopPropagation();
+                        }
+                    }
+            );
+        })();
+    }
+</script>
+
+
+
+
+
+</div>
+</div>
+
+<div class="main">
+    <div class="l-mid-content content-visible">
+        <div class="l-mid-container">
+            
+
+
+
+
+<div class="PartialCookieCompliance serpCookieBanner " id="ccbar">
+        <div class="PartialCookieCompliance-dialog">
+            <div class="PartialCookieCompliance-box">
+                By using this site, you agree to our use of cookies to show you tailored ads and that we share information with our third party partners.
+<a href='cookies?qo=cookieCompliance' data-unified='{"resultType":"cookieCompliance","providerSource":"cookieCompliance","resultInModule":1,"zoneName":"center","moduleName":"cookieCompliance","moduleInZone":1}'>
+                    Change Settings</a> 
+ 
+</div>
+            <div class="PartialCookieCompliance-ok">
+                <a id="ccOkBtn" class="PartialCookieCompliance-okBtn" data-unified="{&quot;resultType&quot;:&quot;cookieCompliance&quot;,&quot;providerSource&quot;:&quot;cookieCompliance&quot;,&quot;resultInModule&quot;:1,&quot;zoneName&quot;:&quot;center&quot;,&quot;moduleName&quot;:&quot;cookieCompliance&quot;,&quot;moduleInZone&quot;:1}">
+                OK</a>
+            </div>
+            <div style="clear:both;"></div>
+        </div>
+        
+</div>
+
+    <script>
+        'use strict';
+        if (App) {
+            (function () {
+                if ("" === "true" && document.cookie.indexOf("ps=1&") === -1) {
+                    document.getElementById('ccbar').style.display = 'none';
+                }
+                if ("" === "true") {
+                    App.events.push(
+                        {
+                            contextSelector: "html",
+                            elementSelector: "body",
+                            type: "click",
+                            handler: function (e) {
+                                e.stopPropagation();
+                                var body = $("body"),
+                                    ccbar = $("#ccbar");
+                                body.unbind(e);
+                                e.preventDefault();
+                                var d = new Date();
+                                d.setDate(d.getDate() + 1000);
+                                document.cookie = "eucc=1; expires=" + d.toUTCString();
+                                if (!ccbar.is(":animated")) {
+                                    ccbar.slideToggle("fast");
+                                }
+                            }
+                        }
+                    )
+                }
+                App.events = App.events || [];
+                App.events.push(
+                    {
+                        partial: "PartialCookieCompliance",
+                        contextSelector: ".PartialCookieCompliance",
+                        elementSelector: ".PartialCookieCompliance-okBtn",
+                        type: "click",
+                        handler: function (e) {
+                            console.log("hide cookie banner");
+                            var okBtn = $("#ccOkBtn"),
+                                ccbar = $("#ccbar");
+                            okBtn.unbind(e);
+                            e.preventDefault();
+                            var d = new Date();
+                            d.setDate(d.getDate() + 1000);
+                            document.cookie = "eucc=1; expires=" + d.toUTCString();
+                            if (!ccbar.is(":animated")) {
+                                ccbar.slideToggle("fast");
+                            }
+                        }
+                    },
+                    {
+                        partial: "PartialCookieCompliance",
+                        contextSelector: ".PartialCookieCompliance",
+                        elementSelector: ".PartialCookieCompliance-closeBtn",
+                        type: "click",
+                        handler: function (e) {
+                            var ccCloseBtn = $("#ccCloseBtn"),
+                                searchPayload = ccCloseBtn.data("unified"),
+                                ccbar = $("#ccbar");
+                            // Set the payload text before send as this button has no text.
+                            searchPayload.text = "Close";
+
+                            ccCloseBtn.unbind(e);
+                            e.preventDefault();
+                            var d = new Date();
+                            d.setDate(d.getDate() + 1000);
+                            document.cookie = "eucc=1; expires=" + d.toUTCString();
+                            if (!ccbar.is(":animated")) {
+                                ccbar.slideToggle("fast");
+                            }
+                        }
+                    }
+                );
+            })();
+        }
+    </script>
+
+
+
+
+
+<script>
+        var ask = ask || {};
+        ask.moduleOrdinals = ask.moduleOrdinals || [];
+        ask.moduleOrdinals.push(2);
+
+        if(typeof ask.CSA !== "undefined" && typeof ask.CSA.startShowSerpTimeout == "function"){
+            ask.CSA.startShowSerpTimeout();
+        }
+    </script>
+
+    <div class="TopAdsPartial">
+        <div id="text-ad-block-0" class="TopAdsPartial-text-ad-block"></div>
+    </div>
+
+
+
+
+
+<div class="PartialRelatedSearch">
+
+
+
+<div class="PartialRelatedSearch-body">
+            
+<div class="PartialRelatedSearch-columns">
+                <div class="PartialRelatedSearch-heading">Searches</div>
+<ul class="PartialRelatedSearch-first-column">
+                    
+
+<li class="PartialRelatedSearch-item">
+                                
+
+<a class="PartialRelatedSearch-item-link" href='//uk.ask.com/web?q=Developing+a+Thesis+Statement&qo=relatedSearchNarrow&o=761443&l=dir' data-unified='{"moduleName":"relatedSearchMid","resultType":"relatedSearch","providerSource":"relatedSearch","zoneName":"center","bing":false,"narrow":true,"expand":false,"names":false,"k2":false,"question":false,"language":"en","localized":false,"rsText":"Developing a Thesis Statement","destinationDomain":"uk.ask.com","moduleInZone":1,"resultInModule":1}'>
+                                    Developing a <b>Thesis</b> Statement
+</a>
+                                
+</li>
+                        
+
+
+
+
+<li class="PartialRelatedSearch-item">
+                                
+
+<a class="PartialRelatedSearch-item-link" href='//uk.ask.com/web?q=Thesis+Statement+for+Essay&qo=relatedSearchNarrow&o=761443&l=dir' data-unified='{"moduleName":"relatedSearchMid","resultType":"relatedSearch","providerSource":"relatedSearch","zoneName":"center","bing":false,"narrow":true,"expand":false,"names":false,"k2":false,"question":false,"language":"en","localized":false,"rsText":"Thesis Statement for Essay","destinationDomain":"uk.ask.com","moduleInZone":1,"resultInModule":2}'>
+                                    <b>Thesis</b> Statement for Essay
+</a>
+                                
+</li>
+                        
+
+
+
+
+<li class="PartialRelatedSearch-item">
+                                
+
+<a class="PartialRelatedSearch-item-link" href='//uk.ask.com/web?q=Examples+of+Thesis+Statements+for+Essays&qo=relatedSearchNarrow&o=761443&l=dir' data-unified='{"moduleName":"relatedSearchMid","resultType":"relatedSearch","providerSource":"relatedSearch","zoneName":"center","bing":false,"narrow":true,"expand":false,"names":false,"k2":false,"question":false,"language":"en","localized":false,"rsText":"Examples of Thesis Statements for Essays","destinationDomain":"uk.ask.com","moduleInZone":1,"resultInModule":3}'>
+                                    Examples of <b>Thesis</b> <b>Statements</b> for <b>Essays</b>
+</a>
+                                
+</li>
+                        
+
+
+
+
+<li class="PartialRelatedSearch-item">
+                                
+
+<a class="PartialRelatedSearch-item-link" href='//uk.ask.com/web?q=Example+of+a+Thesis+Statement+for+Essay&qo=relatedSearchNarrow&o=761443&l=dir' data-unified='{"moduleName":"relatedSearchMid","resultType":"relatedSearch","providerSource":"relatedSearch","zoneName":"center","bing":false,"narrow":true,"expand":false,"names":false,"k2":false,"question":false,"language":"en","localized":false,"rsText":"Example of a Thesis Statement for Essay","destinationDomain":"uk.ask.com","moduleInZone":1,"resultInModule":4}'>
+                                    <b>Example</b> of a <b>Thesis</b> Statement for Essay
+</a>
+                                
+</li>
+                        
+
+
+
+
+<li class="PartialRelatedSearch-item">
+                                
+
+<a class="PartialRelatedSearch-item-link" href='//uk.ask.com/web?q=A+Good+Thesis+Statement&qo=relatedSearchNarrow&o=761443&l=dir' data-unified='{"moduleName":"relatedSearchMid","resultType":"relatedSearch","providerSource":"relatedSearch","zoneName":"center","bing":false,"narrow":true,"expand":false,"names":false,"k2":false,"question":false,"language":"en","localized":false,"rsText":"A Good Thesis Statement","destinationDomain":"uk.ask.com","moduleInZone":1,"resultInModule":5}'>
+                                    A Good <b>Thesis</b> Statement
+</a>
+                                
+</li>
+                        
+
+
+
+</ul>
+                <ul class="PartialRelatedSearch-second-column">
+                    
+
+
+
+<li class="PartialRelatedSearch-item">
+                                
+
+<a class="PartialRelatedSearch-item-link" href='//uk.ask.com/web?q=Creating+a+Thesis+Statement&qo=relatedSearchNarrow&o=761443&l=dir' data-unified='{"moduleName":"relatedSearchMid","resultType":"relatedSearch","providerSource":"relatedSearch","zoneName":"center","bing":false,"narrow":true,"expand":false,"names":false,"k2":false,"question":false,"language":"en","localized":false,"rsText":"Creating a Thesis Statement","destinationDomain":"uk.ask.com","moduleInZone":1,"resultInModule":6}'>
+                                    Creating a <b>Thesis</b> Statement
+</a>
+                                
+</li>
+                        
+
+
+
+
+<li class="PartialRelatedSearch-item">
+                                
+
+<a class="PartialRelatedSearch-item-link" href='//uk.ask.com/web?q=Writing+a+Thesis+Statement&qo=relatedSearchNarrow&o=761443&l=dir' data-unified='{"moduleName":"relatedSearchMid","resultType":"relatedSearch","providerSource":"relatedSearch","zoneName":"center","bing":false,"narrow":true,"expand":false,"names":false,"k2":false,"question":false,"language":"en","localized":false,"rsText":"Writing a Thesis Statement","destinationDomain":"uk.ask.com","moduleInZone":1,"resultInModule":7}'>
+                                    Writing a <b>Thesis</b> Statement
+</a>
+                                
+</li>
+                        
+
+
+
+
+<li class="PartialRelatedSearch-item">
+                                
+
+<a class="PartialRelatedSearch-item-link" href='//uk.ask.com/web?q=Make+a+Thesis&qo=relatedSearchNarrow&o=761443&l=dir' data-unified='{"moduleName":"relatedSearchMid","resultType":"relatedSearch","providerSource":"relatedSearch","zoneName":"center","bing":false,"narrow":true,"expand":false,"names":false,"k2":false,"question":false,"language":"en","localized":false,"rsText":"Make a Thesis","destinationDomain":"uk.ask.com","moduleInZone":1,"resultInModule":8}'>
+                                    Make a <b>Thesis</b>
+</a>
+                                
+</li>
+                        
+
+
+
+
+<li class="PartialRelatedSearch-item">
+                                
+
+<a class="PartialRelatedSearch-item-link" href='//uk.ask.com/web?q=Thesis+Statement+Generator&qo=relatedSearchNarrow&o=761443&l=dir' data-unified='{"moduleName":"relatedSearchMid","resultType":"relatedSearch","providerSource":"relatedSearch","zoneName":"center","bing":false,"narrow":true,"expand":false,"names":false,"k2":false,"question":false,"language":"en","localized":false,"rsText":"Thesis Statement Generator","destinationDomain":"uk.ask.com","moduleInZone":1,"resultInModule":9}'>
+                                    <b>Thesis</b> Statement Generator
+</a>
+                                
+</li>
+                        
+
+
+
+
+<li class="PartialRelatedSearch-item">
+                                
+
+<a class="PartialRelatedSearch-item-link" href='//uk.ask.com/web?q=Example+Thesis&qo=relatedSearchNarrow&o=761443&l=dir' data-unified='{"moduleName":"relatedSearchMid","resultType":"relatedSearch","providerSource":"relatedSearch","zoneName":"center","bing":false,"narrow":true,"expand":false,"names":false,"k2":false,"question":false,"language":"en","localized":false,"rsText":"Example Thesis","destinationDomain":"uk.ask.com","moduleInZone":1,"resultInModule":10}'>
+                                    <b>Example</b> <b>Thesis</b>
+</a>
+                                
+</li>
+                        
+
+</ul>
+            </div>
+        </div>
+    
+
+
+
+</div>
+
+
+
+
+
+<div class="PartialSearchResults-container">
+        
+<div class="PartialSearchResults-body">
+            
+
+                
+
+                    
+
+                        
+
+                            
+<div class="PartialSearchResults-item" data-zen="true">
+    
+<div class="PartialSearchResults-item-title">
+        
+<a class="PartialSearchResults-item-title-link result-link"
+               
+target="_blank" href='http://owll.massey.ac.nz/assignment-types/essay-thesis-statement.php' data-unified='{"domain":"owll.massey.ac.nz","contentDesignation":"partner","moduleName":"searchResults","resultType":"searchResult","providerSource":"delta","treatment":"standard","zoneName":"center","language":"en","moduleInZone":2,"resultInModule":1}' rel='noopener noreferrer'>Essay thesis statement - OWLL - Massey University</a>
+        
+</div>
+    
+<p class="PartialSearchResults-item-url">owll.massey.ac.nz/assignment-types/essay-thesis-statement.php</p>
+    
+<p class="PartialSearchResults-item-abstract">26 Oct 2012 ... The thesis statement forms the core of the essay. ... For example, if you have 
+been given the assignment question “Why is Human Resource&nbsp;...</p>
+    
+</div>
+
+
+
+
+
+                
+
+                    
+
+                        
+
+                            
+<div class="PartialSearchResults-item" data-zen="true">
+    
+<div class="PartialSearchResults-item-title">
+        
+<a class="PartialSearchResults-item-title-link result-link"
+               
+target="_blank" href='http://online-resources.elc.cityu.edu.hk/ELSS/Resource/ThesisStatementsShortAnswerExercises.htm' data-unified='{"domain":"online-resources.elc.cityu.edu.hk","contentDesignation":"partner","moduleName":"searchResults","resultType":"searchResult","providerSource":"delta","treatment":"standard","zoneName":"center","language":"en","moduleInZone":2,"resultInModule":2}' rel='noopener noreferrer'>Writing Thesis Statements for Argumentative Essays</a>
+        
+</div>
+    
+<p class="PartialSearchResults-item-url">online-resources.elc.cityu.edu.hk/ELSS/Resource/ThesisStatementsShortAnswerExercises.htm</p>
+    
+<p class="PartialSearchResults-item-abstract">The thesis statement is usually one sentence in the essay&#39;s introduction that 
+clearly states the writer&#39;s opinion ... Example of an un-debatable thesis statement:</p>
+    
+</div>
+
+
+
+
+
+                
+
+                    
+
+                        
+
+                            
+<div class="PartialSearchResults-item" data-zen="true">
+    
+<div class="PartialSearchResults-item-title">
+        
+<a class="PartialSearchResults-item-title-link result-link"
+               
+target="_blank" href='http://www.scf.edu/content/PDF/ARC/Formulas_and_Definitions_for_the_5_Paragraph_Essay.pdf' data-unified='{"domain":"www.scf.edu","contentDesignation":"partner","moduleName":"searchResults","resultType":"searchResult","providerSource":"delta","treatment":"standard","zoneName":"center","language":"en","moduleInZone":2,"resultInModule":3}' rel='noopener noreferrer'>Formulas and Definitions for the Five-Paragraph Essay The Hook or ...</a>
+        
+</div>
+    
+<p class="PartialSearchResults-item-url">www.scf.edu/content/PDF/ARC/Formulas_and_Definitions_for_the_5_Paragraph_Essay.pdf</p>
+    
+<p class="PartialSearchResults-item-abstract">The five-paragraph essay is formulaic writing that helps inexperienced writers 
+express their ideas with a ... Example of thesis statement without an essay map:.</p>
+    
+</div>
+
+
+
+
+
+                
+
+                    
+
+                        
+
+<div class="PartialSearchResults-item" data-zen="true">
+    
+<div class="PartialSearchResults-item-title">
+        
+<a class="PartialSearchResults-item-title-link result-link"
+               
+href='//uk.ask.com/youtube?q=example+thesis+statements+for+essays&v=9R0ivCaLtnY' data-unified='{"domain":"www.youtube.com","contentDesignation":"partner","moduleName":"searchResults","resultType":"searchResult","providerSource":"delta","treatment":"enhanced","zoneName":"center","language":"en","videoPresent":true,"moduleInZone":2,"resultInModule":4}'>Thesis Statements: Four Steps to a Great Essay | 60second Recap ...</a>
+        
+</div>
+    <div class="PartialSearchResults-youtube-content">
+        
+<div>
+            <div class="PartialSearchResults-item-url">uk.ask.com/youtube?q=example+thesis+statements+for+essays&v=9R0ivCaLtnY</div>
+            <div class="PartialSearchResults-item-abstract">4 Nov 2014 ... Thesis Statements: Four Steps to a Great Essay, using an example from &quot;The 
+Scarlet Letter&quot; by Nathaniel Hawthorne | Excerpt from &quot;How to&nbsp;...</div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+                
+
+                    
+
+                        
+
+                            
+<div class="PartialSearchResults-item" data-zen="true">
+    
+<div class="PartialSearchResults-item-title">
+        
+<a class="PartialSearchResults-item-title-link result-link"
+               
+target="_blank" href='http://teacher.scholastic.com/writeit/cavalcade/pdf/feb2004/p36-37_thesis_exp_essay.pdf' data-unified='{"domain":"teacher.scholastic.com","contentDesignation":"partner","moduleName":"searchResults","resultType":"searchResult","providerSource":"delta","treatment":"standard","zoneName":"center","language":"en","moduleInZone":2,"resultInModule":5}' rel='noopener noreferrer'>Crafting a Thesis for an Expository Essay - Scholastic</a>
+        
+</div>
+    
+<p class="PartialSearchResults-item-url">teacher.scholastic.com/writeit/cavalcade/pdf/feb2004/p36-37_thesis_exp_essay.pdf</p>
+    
+<p class="PartialSearchResults-item-abstract">contains the thesis statement. The next three body paragraphs each develop a 
+separate point to support the thesis, and provide factual examples and.</p>
+    
+</div>
+
+
+
+
+
+                
+
+                    
+
+                        
+
+                            
+<div class="PartialSearchResults-item" data-zen="true">
+    
+<div class="PartialSearchResults-item-title">
+        
+<a class="PartialSearchResults-item-title-link result-link"
+               
+target="_blank" href='https://uncw.edu/ulc/writing/thesis.html' data-unified='{"domain":"uncw.edu","contentDesignation":"partner","moduleName":"searchResults","resultType":"searchResult","providerSource":"delta","treatment":"standard","zoneName":"center","language":"en","moduleInZone":2,"resultInModule":6}' rel='noopener noreferrer'>Thesis Statement: OWL: WS: ULC: UNCW</a>
+        
+</div>
+    
+<p class="PartialSearchResults-item-url">uncw.edu/ulc/writing/thesis.html</p>
+    
+<p class="PartialSearchResults-item-abstract">Without a thesis statement, the essay may lack an argument, focus, clarity, and ... 
+Let us use the original working thesis from the previous section as an example:.</p>
+    
+</div>
+
+
+
+
+
+                
+
+                    
+
+                        
+
+                            
+<div class="PartialSearchResults-item" data-zen="true">
+    
+<div class="PartialSearchResults-item-title">
+        
+<a class="PartialSearchResults-item-title-link result-link"
+               
+target="_blank" href='https://qcpages.qc.cuny.edu/writing/music/students/wripro/preparation.php' data-unified='{"domain":"qcpages.qc.cuny.edu","contentDesignation":"partner","moduleName":"searchResults","resultType":"searchResult","providerSource":"delta","treatment":"standard","zoneName":"center","language":"en","moduleInZone":2,"resultInModule":7}' rel='noopener noreferrer'>Writing thesis statements - Writing in Music</a>
+        
+</div>
+    
+<p class="PartialSearchResults-item-url">qcpages.qc.cuny.edu/writing/music/students/wripro/preparation.php</p>
+    
+<p class="PartialSearchResults-item-abstract">This “short story” can serve as an example of the kind of condensation a thesis 
+statement should have. A thesis statement provides the core idea or argument&nbsp;...</p>
+    
+</div>
+
+
+
+
+
+                
+
+                    
+
+                        
+
+                            
+<div class="PartialSearchResults-item" data-zen="true">
+    
+<div class="PartialSearchResults-item-title">
+        
+<a class="PartialSearchResults-item-title-link result-link"
+               
+target="_blank" href='https://public.wsu.edu/~campbelld/topic.htm' data-unified='{"domain":"public.wsu.edu","contentDesignation":"partner","moduleName":"searchResults","resultType":"searchResult","providerSource":"delta","treatment":"standard","zoneName":"center","language":"en","moduleInZone":2,"resultInModule":8}' rel='noopener noreferrer'>Thesis Statements and Topic Sentences</a>
+        
+</div>
+    
+<p class="PartialSearchResults-item-url">public.wsu.edu/~campbelld/topic.htm</p>
+    
+<p class="PartialSearchResults-item-abstract">Thesis Statements. A thesis statement defines the scope and purpose of the 
+paper. ... Good topic sentences can improve an essay&#39;s readability and 
+organization.</p>
+    
+</div>
+
+
+
+
+
+                
+
+                    
+
+                        
+
+                            
+<div class="PartialSearchResults-item" data-zen="true">
+    
+<div class="PartialSearchResults-item-title">
+        
+<a class="PartialSearchResults-item-title-link result-link"
+               
+target="_blank" href='https://www.matrix.edu.au/how-to-write-a-thesis-statement-a-step-by-step-guide/' data-unified='{"domain":"www.matrix.edu.au","contentDesignation":"partner","moduleName":"searchResults","resultType":"searchResult","providerSource":"delta","treatment":"standard","zoneName":"center","language":"en","moduleInZone":2,"resultInModule":9}' rel='noopener noreferrer'>How to Write A Thesis Statement: A Step-by-Step Guide</a>
+        
+</div>
+    
+<p class="PartialSearchResults-item-url">www.matrix.edu.au/how-to-write-a-thesis-statement-a-step-by-step-guide</p>
+    
+<p class="PartialSearchResults-item-abstract">A helpful guide on how to write a successful thesis statement - the foundation of a 
+Band 6 essay. ... Anybody can write a good essay with practice and instruction.</p>
+    
+</div>
+
+
+
+
+
+                
+
+                    
+
+                        
+
+                            
+<div class="PartialSearchResults-item" data-zen="true">
+    
+<div class="PartialSearchResults-item-title">
+        
+<a class="PartialSearchResults-item-title-link result-link"
+               
+target="_blank" href='https://en.wikipedia.org/wiki/Thesis_statement' data-unified='{"domain":"en.wikipedia.org","contentDesignation":"partner","moduleName":"searchResults","resultType":"searchResult","providerSource":"delta","treatment":"standard","zoneName":"center","language":"en","moduleInZone":2,"resultInModule":10}' rel='noopener noreferrer'>Thesis statement - Wikipedia</a>
+        
+</div>
+    
+<p class="PartialSearchResults-item-url">en.wikipedia.org/wiki/Thesis_statement</p>
+    
+<p class="PartialSearchResults-item-abstract">A thesis statement usually appears at the middle or end of the introductory 
+paragraph of a ... The thesis statement is developed, supported, and explained in 
+the course of the paper by means of examples and evidence. ... A thesis 
+statement does not necessarily forecast organization of an essay which can be 
+more complex&nbsp;...</p>
+    
+</div>
+
+
+
+
+</div>
+    </div>
+
+
+
+
+<script>
+        var ask = ask || {};
+        ask.moduleOrdinals = ask.moduleOrdinals || [];
+        ask.moduleOrdinals.push(3);
+    </script>
+
+    <div class="BottomAdsPartial">
+        <div id="text-ad-block-1" class="BottomAdsPartial-text-ad-block"></div>
+    </div>
+
+
+
+
+
+
+
+<ul class="PartialWebPagination ">
+                    
+
+<a href="/web?qo=semQuery&amp;ad=semA&amp;q=example%20thesis%20statements%20for%20essays&amp;o=761443&amp;ag=fw&amp;an=google_s&amp;rch=nl16">
+                            <li class=" PartialWebPagination-pgsel PartialWebPagination-button">1</li>
+                        </a>
+                    
+<a href="/web?qo=pagination&amp;ad=semA&amp;q=example%20thesis%20statements%20for%20essays&amp;o=761443&amp;ag=fw&amp;an=google_s&amp;rch=nl16&amp;qsrc=998&amp;page=2">
+                            <li class="  PartialWebPagination-button">2</li>
+                        </a>
+                    
+<a href="/web?qo=pagination&amp;ad=semA&amp;q=example%20thesis%20statements%20for%20essays&amp;o=761443&amp;ag=fw&amp;an=google_s&amp;rch=nl16&amp;qsrc=998&amp;page=3">
+                            <li class="  PartialWebPagination-button">3</li>
+                        </a>
+                    
+<a href="/web?qo=pagination&amp;ad=semA&amp;q=example%20thesis%20statements%20for%20essays&amp;o=761443&amp;ag=fw&amp;an=google_s&amp;rch=nl16&amp;qsrc=998&amp;page=4">
+                            <li class="  PartialWebPagination-button">4</li>
+                        </a>
+                    
+<a href="/web?qo=pagination&amp;ad=semA&amp;q=example%20thesis%20statements%20for%20essays&amp;o=761443&amp;ag=fw&amp;an=google_s&amp;rch=nl16&amp;qsrc=998&amp;page=5">
+                            <li class="  PartialWebPagination-button">5</li>
+                        </a>
+                    
+
+<a href="/web?qo=pagination&amp;ad=semA&amp;q=example%20thesis%20statements%20for%20essays&amp;o=761443&amp;ag=fw&amp;an=google_s&amp;rch=nl16&amp;qsrc=998&amp;page=2">
+                            <li class="PartialWebPagination-next">Next</li>
+                        </a>
+                    
+</ul>
+            
+
+
+
+
+
+
+
+</div>
+    </div>
+    <div class="l-right-content content-visible">
+
+
+
+
+
+<div id="scroller-anchor"></div>
+            <div id="scroller" class="PartialRelatedSearch rightTop" data-zen="true">
+        
+<div class="PartialRelatedSearch-body">
+                
+<div class="PartialRelatedSearch-title">Related Search</div>
+                
+<ul class="PartialRelatedSearch-list">
+                    
+<li class="PartialRelatedSearch-item">
+                            
+<a class="PartialRelatedSearch-item-link" href='//uk.ask.com/web?q=Developing+a+Thesis+Statement&qo=relatedSearchNarrow&o=761443&l=dir' data-unified='{"moduleName":"relatedSearch","resultType":"relatedSearch","providerSource":"relatedSearch","zoneName":"right","narrow":true,"expand":false,"names":false,"k2":false,"question":false,"language":"en","localized":false,"rsText":"Developing a Thesis Statement","destinationDomain":"uk.ask.com","moduleInZone":1,"resultInModule":1}'>
+                                Developing a <b>Thesis</b> Statement
+</a>
+                        </li>
+                    
+<li class="PartialRelatedSearch-item">
+                            
+<a class="PartialRelatedSearch-item-link" href='//uk.ask.com/web?q=Creating+a+Thesis+Statement&qo=relatedSearchNarrow&o=761443&l=dir' data-unified='{"moduleName":"relatedSearch","resultType":"relatedSearch","providerSource":"relatedSearch","zoneName":"right","narrow":true,"expand":false,"names":false,"k2":false,"question":false,"language":"en","localized":false,"rsText":"Creating a Thesis Statement","destinationDomain":"uk.ask.com","moduleInZone":1,"resultInModule":2}'>
+                                Creating a <b>Thesis</b> Statement
+</a>
+                        </li>
+                    
+<li class="PartialRelatedSearch-item">
+                            
+<a class="PartialRelatedSearch-item-link" href='//uk.ask.com/web?q=Thesis+Statement+for+Essay&qo=relatedSearchNarrow&o=761443&l=dir' data-unified='{"moduleName":"relatedSearch","resultType":"relatedSearch","providerSource":"relatedSearch","zoneName":"right","narrow":true,"expand":false,"names":false,"k2":false,"question":false,"language":"en","localized":false,"rsText":"Thesis Statement for Essay","destinationDomain":"uk.ask.com","moduleInZone":1,"resultInModule":3}'>
+                                <b>Thesis</b> Statement for Essay
+</a>
+                        </li>
+                    
+<li class="PartialRelatedSearch-item">
+                            
+<a class="PartialRelatedSearch-item-link" href='//uk.ask.com/web?q=Writing+a+Thesis+Statement&qo=relatedSearchNarrow&o=761443&l=dir' data-unified='{"moduleName":"relatedSearch","resultType":"relatedSearch","providerSource":"relatedSearch","zoneName":"right","narrow":true,"expand":false,"names":false,"k2":false,"question":false,"language":"en","localized":false,"rsText":"Writing a Thesis Statement","destinationDomain":"uk.ask.com","moduleInZone":1,"resultInModule":4}'>
+                                Writing a <b>Thesis</b> Statement
+</a>
+                        </li>
+                    
+<li class="PartialRelatedSearch-item">
+                            
+<a class="PartialRelatedSearch-item-link" href='//uk.ask.com/web?q=Examples+of+Thesis+Statements+for+Essays&qo=relatedSearchNarrow&o=761443&l=dir' data-unified='{"moduleName":"relatedSearch","resultType":"relatedSearch","providerSource":"relatedSearch","zoneName":"right","narrow":true,"expand":false,"names":false,"k2":false,"question":false,"language":"en","localized":false,"rsText":"Examples of Thesis Statements for Essays","destinationDomain":"uk.ask.com","moduleInZone":1,"resultInModule":5}'>
+                                Examples of <b>Thesis</b> <b>Statements</b> for <b>Essays</b>
+</a>
+                        </li>
+                    
+<li class="PartialRelatedSearch-item">
+                            
+<a class="PartialRelatedSearch-item-link" href='//uk.ask.com/web?q=Make+a+Thesis&qo=relatedSearchNarrow&o=761443&l=dir' data-unified='{"moduleName":"relatedSearch","resultType":"relatedSearch","providerSource":"relatedSearch","zoneName":"right","narrow":true,"expand":false,"names":false,"k2":false,"question":false,"language":"en","localized":false,"rsText":"Make a Thesis","destinationDomain":"uk.ask.com","moduleInZone":1,"resultInModule":6}'>
+                                Make a <b>Thesis</b>
+</a>
+                        </li>
+                    
+<li class="PartialRelatedSearch-item">
+                            
+<a class="PartialRelatedSearch-item-link" href='//uk.ask.com/web?q=Example+of+a+Thesis+Statement+for+Essay&qo=relatedSearchNarrow&o=761443&l=dir' data-unified='{"moduleName":"relatedSearch","resultType":"relatedSearch","providerSource":"relatedSearch","zoneName":"right","narrow":true,"expand":false,"names":false,"k2":false,"question":false,"language":"en","localized":false,"rsText":"Example of a Thesis Statement for Essay","destinationDomain":"uk.ask.com","moduleInZone":1,"resultInModule":7}'>
+                                <b>Example</b> of a <b>Thesis</b> Statement for Essay
+</a>
+                        </li>
+                    
+<li class="PartialRelatedSearch-item">
+                            
+<a class="PartialRelatedSearch-item-link" href='//uk.ask.com/web?q=Thesis+Statement+Generator&qo=relatedSearchNarrow&o=761443&l=dir' data-unified='{"moduleName":"relatedSearch","resultType":"relatedSearch","providerSource":"relatedSearch","zoneName":"right","narrow":true,"expand":false,"names":false,"k2":false,"question":false,"language":"en","localized":false,"rsText":"Thesis Statement Generator","destinationDomain":"uk.ask.com","moduleInZone":1,"resultInModule":8}'>
+                                <b>Thesis</b> Statement Generator
+</a>
+                        </li>
+                    
+<li class="PartialRelatedSearch-item">
+                            
+<a class="PartialRelatedSearch-item-link" href='//uk.ask.com/web?q=A+Good+Thesis+Statement&qo=relatedSearchNarrow&o=761443&l=dir' data-unified='{"moduleName":"relatedSearch","resultType":"relatedSearch","providerSource":"relatedSearch","zoneName":"right","narrow":true,"expand":false,"names":false,"k2":false,"question":false,"language":"en","localized":false,"rsText":"A Good Thesis Statement","destinationDomain":"uk.ask.com","moduleInZone":1,"resultInModule":9}'>
+                                A Good <b>Thesis</b> Statement
+</a>
+                        </li>
+                    
+<li class="PartialRelatedSearch-item">
+                            
+<a class="PartialRelatedSearch-item-link" href='//uk.ask.com/web?q=Example+Thesis&qo=relatedSearchNarrow&o=761443&l=dir' data-unified='{"moduleName":"relatedSearch","resultType":"relatedSearch","providerSource":"relatedSearch","zoneName":"right","narrow":true,"expand":false,"names":false,"k2":false,"question":false,"language":"en","localized":false,"rsText":"Example Thesis","destinationDomain":"uk.ask.com","moduleInZone":1,"resultInModule":10}'>
+                                <b>Example</b> <b>Thesis</b>
+</a>
+                        </li>
+                    
+<li class="PartialRelatedSearch-item">
+                            
+<a class="PartialRelatedSearch-item-link" href='//uk.ask.com/web?q=Help+to+Create+a+Thesis+Sentence&qo=relatedSearchExpand&o=761443&l=dir' data-unified='{"moduleName":"relatedSearch","resultType":"relatedSearch","providerSource":"relatedSearch","zoneName":"right","narrow":false,"expand":true,"names":false,"k2":false,"question":false,"language":"en","localized":false,"rsText":"Help to Create a Thesis Sentence","destinationDomain":"uk.ask.com","moduleInZone":1,"resultInModule":11}'>
+                                Help to Create a <b>Thesis</b> Sentence
+</a>
+                        </li>
+                    
+<li class="PartialRelatedSearch-item">
+                            
+<a class="PartialRelatedSearch-item-link" href='//uk.ask.com/web?q=Thesis+Statments&qo=relatedSearchExpand&o=761443&l=dir' data-unified='{"moduleName":"relatedSearch","resultType":"relatedSearch","providerSource":"relatedSearch","zoneName":"right","narrow":false,"expand":true,"names":false,"k2":false,"question":false,"language":"en","localized":false,"rsText":"Thesis Statments","destinationDomain":"uk.ask.com","moduleInZone":1,"resultInModule":12}'>
+                                <b>Thesis</b> Statments
+</a>
+                        </li>
+                    
+</ul>
+
+            </div>
+        
+</div>
+        
+
+
+
+<script>
+                'use strict';
+                if (App) {
+                    (function () {
+                        App.events = App.events || [];
+                        App.events.push(
+                                {
+                                    partial: "PartialRelatedSearch",
+                                    contextSelector: document,
+                                    elementSelector: null,
+                                    type: "ready",
+                                    handler: function () {
+
+                                        $(window).resize(function () {
+                                            var scrollTop = $(window).scrollTop();
+                                            var divAnchor = $("#scroller-anchor").offset().top;
+                                            var moveableDiv = $("#scroller");
+
+                                            if ($(".l-content").width() < 773) {
+                                                moveableDiv.css({position: "relative", top: ""});
+                                            } else {
+                                                if (scrollTop > divAnchor) {
+                                                    moveableDiv.css({position: "fixed", top: "10px"});
+                                                }
+                                            }
+                                        });
+
+                                        $(window).scroll(function () {
+                                            var scrollTop = $(window).scrollTop();
+                                            var divAnchor = $("#scroller-anchor").offset().top;
+                                            var moveableDiv = $("#scroller");
+
+                                            if (scrollTop > divAnchor) {
+                                                moveableDiv.css({position: "fixed", top: "10px"});
+                                            } else {
+                                                moveableDiv.css({position: "relative", top: ""});
+                                            }
+                                        });
+                                    }
+                                }
+                        )
+                    })();
+                }
+            </script>
+        
+
+
+
+
+
+
+</div>
+</div>
+<div class="l-footer content-visible">
+    <div class="l-footer-container">
+        
+
+    
+
+<div class="PartialFooter-body">
+    <ul class="PartialFooter-list">
+        
+
+<li class="PartialFooter-item">
+                
+<a class="PartialFooter-item-link"  href='/privacy' data-unified='{"moduleName":"navBottom","providerSource":"navigation","resultType":"navigation","zone":"footer","moduleInZone":2,"resultInModule":1}' data-qo='footerLinks'>Privacy</a>
+                
+</li>
+        
+<li class="PartialFooter-item">
+                
+<a class="PartialFooter-item-link"  href='/terms' data-unified='{"moduleName":"navBottom","providerSource":"navigation","resultType":"navigation","zone":"footer","moduleInZone":2,"resultInModule":1}' data-qo='footerLinks'>Terms of Service</a>
+                
+</li>
+        
+<li class="PartialFooter-item">
+                
+<a class="PartialFooter-item-link"  href='/cookies' data-unified='{"moduleName":"navBottom","providerSource":"navigation","resultType":"navigation","zone":"footer","moduleInZone":2,"resultInModule":1}' data-qo='footerLinks'>Cookie Policy</a>
+                
+</li>
+        
+<li class="PartialFooter-item">
+            <span class="PartialFooter-item-label copyright">© 2019 IAC Publishing, LLC</span>
+        </li>
+    </ul>
+</div>
+
+
+
+    
+
+</div>
+</div>
+<script src="/s/0-2-81/ask-page.min.js"></script>
+<script>
+    $(document).ready(function ($) {
+        var i, k, event, readyElementList;
+        if (typeof App.events === "object" && App.events.length) {
+            for (i = 0, k = App.events.length; i < k; i += 1) {
+                event = App.events[i];
+                if (event.type === "ready") {
+                    try {
+                        readyElementList = (event.elementSelector) ?
+                                $(event.elementSelector, event.contextSelector) :
+                                $(event.contextSelector);
+                        readyElementList.each(function (index) {
+                            event.handler.apply(this);
+                        });
+                    } catch (e) {
+                        console.error("Failed to run a 'ready' event handler.");
+                        console.error(e);
+                    }
+                } else {
+                    $(event.contextSelector).on(event.type, event.elementSelector || null, event.handler);
+                }
+            }
+        }
+    });
+</script>
+    
+
+    
+
+
+<script>
+        var _UnifiedApiParams = {"uniqueUser":"093A2B89-B51D-4456-BC1B-28FC22034921","appId":"Archie_Askint","appVersion":"b43374d","appDate":"2019-03-02T00:04:36Z","logPageView":false,"updateSession":false,"domain":"ask.com","url":"uk.ask.com/log/browser/event","backFillRequired":false,"eventId":"050D2586-7087-4595-98CC-AB31660FB589","maxSession":30,"suppressCookies":false,"cookieExpirationMinutes":129600,"newSessionOnDomainChange":false,"cookieName":"uc"};
+        _UnifiedApiParams.url = (("https:" === window.location.protocol)? "https://" : "http://" ) + _UnifiedApiParams.url;
+    </script>
+
+    <script src="/s/0-2-81/unified-api.min.js"></script>
+    <script>
+    if(App) {
+        (function () {
+            App.events = App.events || [];
+            App.events.push({
+                partial: "partial-unified-footer",
+                contextSelector: document,
+                elementSelector: null,
+                type: "ready",
+                handler: function () {
+                        window.ask = window.ask || {};
+                        var ask = window.ask;
+                        ask.unified = ask.unified || {};
+                        ask.unified.pageContext = {"anuaaf":"Archie","anxut":"UNIFIED","anuaci":"47.247.72.20","anuaafl":"761443","anxsn":"asksitesusw2-193-69kqm","anuahm":"GET","anuadc":"usw2","anuaqs":"qo=semQuery&ad=semA&q=example+thesis+statements+for+essays&o=761443&ag=fw&an=google_s&rch=nl16","anxu":"http://uk.ask.com/web?qo=semQuery&ad=semA&q=example%20thesis%20statements%20for%20essays&o=761443&ag=fw&an=google_s&rch=nl16","anuaad":"semA","anuapbr":"google.com","anuaan":"google_s","anuaamt":"","anuaagc":"fw","anuaadid":"","ucctr":"","ucctn":"","ucs":"","ucdm":"","uccnt":"","ucpc":"","anuadtp":"desktop","anxbt":"Chrome","anxbv":"72.0.3626.119","anxpt":"Windows","anxpv":"7","anxcd":"","anxw":"800","anxh":"600","anxv":"b43374d","anxd":"2019-03-02T00:04:36.442Z","anuaptp":"resultsPage","anuachl":"web","anuasv":"v1","anuaprdd":"search","anxa":"Archie_Askint","anxp":"ask.com","anualcl":"gb","anuaapp":"{\"pageViewId\":\"b286c6cf88dbeb48574851a51e9aaadc\",\"queryOrigination\":\"semQuery\",\"templateId\":\"desktop\",\"queryTerm\":\"example thesis statements for essays\",\"category\":\"Education\"}","anuapn":1,"anuaptl":"example thesis statements for essays, Ask","metaInfo":{"adType":"csa","client":"aj-nl3-img","clientChannel":"nl16"}};
+                        ask.unified.payload = {
+                            pageResults: [],
+                            providers: ask.unified.pendingProviders || {}
+                        };
+
+                        if (ask.unified.pendingParams) {
+                            for (var key in ask.unified.pendingParams) {
+                                ask.unified.payload[key] = ask.unified.pendingParams[key];
+                            }
+                            ask.unified.pendingParams = {};
+                        }
+
+                        ask.unified.pendingProviders = {};
+                        ask.unified.events = [];
+
+                        
+                        ask.unified.addPresentation = function (zoneName, moduleName, moduleOrdinal, resultTemplate, count) {
+                            for (var i = 0; i < count; i++) {
+                                var nextResult = {};
+                                $.extend(nextResult, resultTemplate);
+                                nextResult.resultInModule = i + 1;
+                                nextResult.zoneName = zoneName;
+                                nextResult.moduleName = moduleName;
+                                nextResult.moduleInZone = moduleOrdinal;
+                                ask.unified.payload.pageResults.push(nextResult);
+                            }
+                        };
+
+                        ask.unified.addPresentationResult = function (results) {
+                            ask.unified.payload.pageResults = ask.unified.payload.pageResults.concat(results);
+                        };
+
+                        
+                        ask.unified.addProvider = function (providerName, providerPayload) {
+                            if (!ask.unified.payload.providers[providerName]) {
+                                ask.unified.payload.providers[providerName] = providerPayload;
+                            } else {
+                                $.extend(providerPayload, ask.unified.payload.providers[providerName]);
+                                ask.unified.payload.providers[providerName] = providerPayload;
+                            }
+                        };
+
+                        
+                        ask.unified.sendAction = function (actionPayload, cb) {
+                            var payload = {};
+                            $.extend(payload, ask.unified.pageContext);
+
+                            if(ask.unified.pageContext.anuaapp) {
+                                $.extend(actionPayload, JSON.parse(ask.unified.pageContext.anuaapp));
+                            }
+                            payload.anuaapp = JSON.stringify(actionPayload);
+
+                            if (!cb) {
+                                _UnifiedApi.logEvent("Action", payload, ask.unified.apiHandler);
+                            } else {
+                                var callback = function (success, response) {
+                                    ask.unified.apiHandler(success, response, function () {
+                                        cb();
+                                    });
+                                };
+                                _UnifiedApi.logEvent("Action", payload, callback);
+                            }
+                        };
+
+                        ask.unified.sendBackFill = function () {
+                            var navInfo = getNavigationTimingInfo(window);
+                            if(navInfo) {
+                                
+                                if (isNavInfoAvailableInUnifiedPayload()) {
+                                    if(isPageLoadComplete(navInfo)) {
+                                        
+                                        if(ask.unified.payload.externalData.navInfo.loadEventEnd === 0) {
+                                            
+                                            ask.unified.payload.externalData.navInfo = navInfo;
+                                        } else {
+                                            
+                                            return;
+                                        }
+                                    } else {
+                                        
+                                        
+                                        registerSendBackFillOnPageLoadComplete();
+                                    }
+                                } else {
+                                    if(ask.unified.payload.externalData) {
+                                        ask.unified.payload.externalData.navInfo = navInfo;
+                                    } else {
+                                        ask.unified.payload.externalData = { "navInfo": navInfo };
+                                    }
+
+                                    if(!isPageLoadComplete(navInfo)) {
+                                        
+                                        
+                                        registerSendBackFillOnPageLoadComplete();
+                                    }
+                                }
+                            }
+
+                            var payload = { anxi: _UnifiedApiParams.eventId};
+                            $.extend(payload, ask.unified.pageContext);
+
+                            if ($.isEmptyObject(ask.unified.payload.providers)) {
+                                delete ask.unified.payload.providers;
+                            }
+                            payload.anuaapp = JSON.stringify(ask.unified.payload);
+
+                            _UnifiedApi.logEvent("BackFill", payload, ask.unified.apiHandler);
+
+                            
+                            ask.unified.payload = {
+                                pageResults: [],
+                                providers: {}
+                            };
+                        };
+
+                        function isPageLoadComplete(navInfo) {
+                            return navInfo.loadEventEnd > 0;
+                        }
+
+                        function isNavInfoAvailableInUnifiedPayload() {
+                            return !!ask.unified.payload.externalData && !!ask.unified.payload.externalData.navInfo;
+                        }
+
+                        function registerSendBackFillOnPageLoadComplete() {
+                            $(window).load(function(){
+                                setTimeout(function(){
+                                    ask.unified.sendBackFill();
+                                }, 0);
+                            });
+                        }
+
+                        
+                        ask.unified.cancelPending = function (key) {
+                            var length = ask.unified.pending.length;
+                            for (var i = 0; i < length; i++) {
+                                if (ask.unified.pending[i] === key) {
+                                    ask.unified.pending.splice(i, 1);
+                                    break;
+                                }
+                            }
+                        };
+
+                        
+                        ask.unified.apiHandler = function (success, responseText, cb) {
+                            
+if (cb) {
+                                cb();
+                            }
+                        };
+
+                        var _timedOut = false,
+                                _timeFromSerpStart = null,
+                                _adsLoggingTimeout = null,
+                                _dynamicLoggingTimeout = null;
+
+
+                        try {
+                            _timeFromSerpStart = ((new Date() - ask.CSA.startTime) - ask.CSA.showSerpStartTime);
+                            _adsLoggingTimeout = 3000 - _timeFromSerpStart;
+                            _dynamicLoggingTimeout = Math.max(_adsLoggingTimeout, 1);
+                        } catch (e) {
+                            _dynamicLoggingTimeout = 2000;
+                        }
+
+                        function mixinCSAAdData(payload) {
+                            var externalData = {
+                                csaInfo: {
+                                    domTime: ask.CSA.domReadyTime ? ask.CSA.domReadyTime : 0,
+                                    adsResponseTime: ask.CSA.responseTime ? ask.CSA.responseTime : 0,
+                                    adsShownTime: ask.CSA.adsShownTime ? ask.CSA.adsShownTime : 0,
+                                    serpShownTime: ask.CSA.serpShownTime ? ask.CSA.serpShownTime : 0,
+                                    supplement: _timedOut,
+                                    serpTimedOut: !!ask.CSA.showSerpTimeoutFired,
+                                    serpTimeoutStartTime: ask.CSA.showSerpStartTime ? ask.CSA.showSerpStartTime : 0,
+                                    dynamicTimeout: _dynamicLoggingTimeout,
+                                    viewportHeight: ask.CSA.viewportHeight ? ask.CSA.viewportHeight : 0,
+                                    viewportWidth: ask.CSA.viewportWidth ? ask.CSA.viewportWidth : 0,
+                                    adContentRatio: ask.CSA.adContentRatio ? ask.CSA.adContentRatio : 0,
+                                    csaHeight: ask.CSA.csaHeight ? ask.CSA.csaHeight : 0,
+                                    csaWidth: ask.CSA.csaWidth ? ask.CSA.csaWidth : 0,
+                                    centerRailHeight: ask.CSA.centerRailHeight ? ask.CSA.centerRailHeight : 0,
+                                    centerRailWidth: ask.CSA.centerRailWidth ? ask.CSA.centerRailWidth : 0,
+                                    rightRailHeight: ask.CSA.rightRailHeight ? ask.CSA.rightRailHeight : 0,
+                                    rightRailWidth: ask.CSA.rightRailWidth ? ask.CSA.rightRailWidth : 0
+                                }
+                            };
+
+                              var totalAds = 0,
+                                  topCount = 0,
+                                  botCount = 0,
+                                  uniqueResultsDisplayed = 0,
+                                  csaTopModule = "gslTop" || "csaTop",
+                                  csaBottomModule = "gslBottom" || "csaBottom",
+                                  csaZone = "center" || "primary";
+
+                            if(ask.CSA.adModules){
+                                for(var i= 0; i < ask.CSA.adModules.length; i++){
+                                    var m = ask.CSA.adModules[i];
+                                    totalAds =+ m.count();
+                                    ask.unified.addPresentation(m.zoneName, m.moduleName, m.ordinal, {resultType: m.resultType, providerSource: m.providerSource}, m.count());
+                                }
+                                uniqueResultsDisplayed = ask.CSA.pageOptions.numRepeated ? ask.CSA.adModules[0].count() : totalAds;
+                            }
+                            else {
+                                topCount = ask.CSA.numTopAds ? ask.CSA.numTopAds : 0;
+                                botCount = ask.CSA.numBottomAds ? ask.CSA.numBottomAds : 0;
+                                totalAds = topCount + botCount;
+                                ask.unified.addPresentation(csaZone, csaTopModule, ask.moduleOrdinals[0], { resultType: "gsl", providerSource: "csa"}, topCount);
+                                ask.unified.addPresentation(csaZone, csaBottomModule, ask.moduleOrdinals[1], {resultType: "gsl", providerSource: "csa"}, botCount);
+                                uniqueResultsDisplayed = ask.CSA.pageOptions.numRepeated ? botCount : totalAds;
+                            }
+
+                            if(csaZone === "center") {
+                                ask.unified.addProvider("gsl", {
+                                    zoneCenterResults: totalAds
+                                });
+                            } else {
+                                ask.unified.addProvider("gsl", {
+                                    zonePrimaryResults: totalAds
+                                });
+                            }
+
+                            ask.unified.addProvider("gsl", {
+                                responseTime: ask.CSA.responseTime ? ask.CSA.responseTime : 0,
+                                resultsDisplayed: totalAds,
+                                uniqueResultsDisplayed: uniqueResultsDisplayed
+                            });
+
+                            try {
+                                mixinNavigationTimingInfo(externalData);
+
+                                ask.unified.payload.externalData = externalData;
+                            } catch (e) {
+                            }
+                        };
+
+                        
+                        function mixinNavigationTimingInfo(eData) {
+                            var navInfo = getNavigationTimingInfo(window);
+                            if(navInfo) {
+                                eData["csaInfo"].csaStartTime = (ask.CSA.startTime.getTime() - navInfo.navigationStart);
+                            }
+                        };
+
+                        $(document).on("unified:BackFill", function (evt, data) {
+                            var ask = window.ask;
+                            if (data && data.payload) {
+                                ask.unified.addPresentationResult(data.payload);
+                                ask.unified.sendBackFill();
+                            }
+                        });
+
+                        if ("1" !== CookieUtil.getChipValue("uc", "nv")) {
+                            
+                            return;
+                        }
+
+                        if (ask.afc) {
+                            ask.unified.addProvider("gsl", ask.afc.provider);
+                            ask.unified.addPresentation.apply(null, ask.afc.presentation.top);
+                            ask.unified.addPresentation.apply(null, ask.afc.presentation.bottom);
+                            ask.unified.sendBackFill();
+                        } else if (!ask.unified.pending || ask.unified.pending.length == 0) {
+                            if(ask.unified.payload) {
+                                ask.unified.payload.suspectBackFill = true;
+                            } else {
+                                ask.unified.payload = { "suspectBackFill": true };
+                            }
+                            ask.unified.sendBackFill();
+                        } else if (ask.CSA && typeof ask.CSA.addCSALoadCallback === "function") {
+                            ask.CSA.addCSALoadCallback(function () {
+                                var payload = _timedOut ? { pl_supplement: true } : {};
+
+                                if (typeof ask.CSA.calculateAdContentMetrics === "function") {
+                                    ask.CSA.calculateAdContentMetrics();
+                                }
+
+                                mixinCSAAdData(payload);
+
+                                ask.unified.sendBackFill();
+                            }, function () {
+                                _timedOut = true;
+
+                                if (ask.CSA && typeof ask.CSA.showSerp === "function") {
+                                    ask.CSA.showSerp();
+                                }
+
+                                ask.unified.sendBackFill();
+                            }, _dynamicLoggingTimeout);
+                        }
+                    }
+                });
+
+                App.events.push({
+                    partial: "partial-unified-footer",
+                    contextSelector: document,
+                    elementSelector: "a",
+                    type: "click",
+                    handler: function(evt) {
+                        var ask = window.ask;
+                        var target = $(this);
+
+                        var unifiedData = target.data("unified");
+                        if(!unifiedData) {
+                            return; 
+                        }
+
+                        var isImage = "img" === evt.target.tagName.toLowerCase();
+                        var assetType = target.data("unified-assettype") || (isImage ? "image" : "primaryTextLink");
+                        var destUrl = target.attr("href");
+                        var qoParam = target.data("qo");
+
+                        var appPayload = {
+                            actionType: "click",
+                            assetType: assetType,
+                            text: $.trim(target.text()).replace(/\s+/g, " "),
+                            url: destUrl
+                        };
+
+                        
+                        if(ask.unified.pageContext.metaInfo) {
+                            unifiedData.metaInfo = unifiedData.metaInfo || {};
+                            unifiedData.metaInfo.client = ask.unified.pageContext.metaInfo.client || "";
+                            unifiedData.metaInfo.clientChannel = ask.unified.pageContext.metaInfo.clientChannel || "";
+                        }
+
+                        
+                        if(unifiedData.imagePresent) {
+                            unifiedData.metaInfo = unifiedData.metaInfo || {};
+                            unifiedData.metaInfo.imagePresent = unifiedData.imagePresent;
+                            delete unifiedData.imagePresent;
+                        }
+
+                        $.extend(appPayload, unifiedData);
+
+                        
+var payload = {};
+                        $.extend(payload, ask.unified.pageContext);
+
+                        if(ask.unified.pageContext.anuaapp) {
+                            $.extend(appPayload, JSON.parse(ask.unified.pageContext.anuaapp));
+                        }
+
+                        var targetAttr = target.attr("target");
+                        var nonNav = assetType === "carouselClick" || assetType === "loadMore";
+
+                        
+payload.anuaapp = JSON.stringify(appPayload);
+
+                        if(targetAttr || nonNav) {
+                            _UnifiedApi.logEvent("Action", payload, ask.unified.apiHandler);
+                        } else {
+                            var callback = ask.unified.apiHandler;
+                            if (destUrl) {
+                                callback = function (success, response) {
+                                    ask.unified.apiHandler(success, response, function() {
+                                        destUrl = _UnifiedApi.addURLParam(destUrl, "qo", qoParam);
+                                        document.location = destUrl;
+                                    });
+                                };
+                            }
+                            _UnifiedApi.logEvent("Action", payload, callback);
+                            return false;
+                        }
+                    }
+                });
+        })();
+        }
+    </script>
+
+
+
+
+
+    <script>
+        var _comscore = _comscore || [];
+        _comscore.push(
+                { c1: "2", c2: "6034776" }
+        );
+        (function()
+                { var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true; s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js"; el.parentNode.insertBefore(s, el); }
+        )();
+    </script>
+    <noscript>
+        <img src="//b.scorecardresearch.com/p?c1=2&c2=6034776&cv=2.0&cj=1" />
+    </noscript>
+
+
+
+
+<script>
+
+    var lssCfg = (function(){
+        return {
+            "topOffset": 3,
+            "leftOffset": 0,
+            "channel": "web",
+            "path": "web",
+            "disableTurnOffLink": "'true'",
+            "disableSS": false,
+            "server": "amg-ss.ask.com",
+            "serverPath": "/query",
+            "ldomain": "/",
+            "locale" : "en-GB",
+            "limit" : 10,
+            "ssBold": "'false'",
+            "clearSearchHistory": "Clear search history",
+            "max": "",
+            "ssFromQueryHistory": "true",
+            "queryHistory": "",
+            "queryHistoryContentColor": "",
+            "ssContentColor": "'false'",
+            "ssContentColorCode": "",
+            "matchingTextUnBold": "",
+            "suggestionTextUnBold": "",
+            "ssItems": "",
+            "containerClass" : "ac_results",
+            "onSelect": function(data) {
+                if( ask && ask.unified && ask.unified.sendAction ){
+                    var assetType = (data.url.indexOf("searchHistory") !== -1)? "searchHistory" : "searchSuggestions",
+                            searchPayload = JSON.parse('{"resultType":"navigation","providerSource":"navigation","assetType":"searchBar","actionType":"click","zoneName":"header","moduleName":"searchBox"}');
+                    searchPayload.assetType = assetType;
+                    ask.unified.sendAction(searchPayload, function () {
+                        window.location.href = data.url;
+                    });
+                    return;
+                }
+                window.location.href = data.url;
+            }
+        };
+    })();
+
+    if(App) {
+        (function () {
+            App.events = App.events || [];
+            App.events.push({
+                partial: "PartialLss",
+                contextSelector: document,
+                elementSelector: null,
+                type: "ready",
+                handler: function () {
+                    if (!lssCfg.disableSS) {
+                        $("input[name=q]:first:not(:hidden)").lssSuggestions(lssCfg);
+                    }
+                }
+            });
+        })();
+    }
+</script>
+
+
+
+<script>
+        
+getDocumentCookies = function () {
+        var theCookies = document.cookie.split(';'),
+                cookieObj = {},
+                tmp, tmpName, tmpVal;
+        for (var i = 1; i <= theCookies.length; i++) {
+            tmp = theCookies[i - 1].split('=');
+            if (tmp[0] !== undefined && tmp[1] !== undefined) {
+                tmpName = decodeURIComponent(tmp[0].trim());
+                tmpVal = decodeURIComponent(tmp[1].trim());
+                if (tmpName.indexOf('[') > -1 && tmpName.indexOf(']') > -1) {
+                    cookieObj[tmpName.split('[')[0]] = cookieObj[tmpName.split('[')[0]] || {};
+                    cookieObj[tmpName.split('[')[0]][tmpName.split('[')[1].replace(']', '')] = tmpVal;
+                } else {
+                    cookieObj[tmpName] = tmpVal;
+                }
+            }
+        }
+        return cookieObj;
+    };
+
+    function polling() {
+        var cks = getDocumentCookies();
+
+        for (var i in cks) {
+            var name = i;
+            var value = cks[i];
+
+            if (name.indexOf('csaClick') != -1 || name.indexOf('ypaClick') != -1) {
+                
+
+
+if (typeof fbq === "function") {
+                        fbq('trackSingleCustom', '1236983599798824', 'PaidClick');
+                        var paidClickAd = (name.indexOf('csaClick') != -1)? 'PaidClickGoogle':'PaidClickYahoo';
+                        fbq('trackSingleCustom', '1236983599798824', paidClickAd);
+                    }
+                
+
+
+
+
+document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+            }
+        }
+        setTimeout(function () {
+            polling();
+        }, 100);
+    }
+
+    (function () {
+        
+polling();
+    })();
+
+</script>
+
+
+
+
+
+<div id="shadow" style="height: 100%; display: none;"></div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
