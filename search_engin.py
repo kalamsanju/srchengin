@@ -12,17 +12,16 @@ cgitb.enable()
 #Create instance of FieldStorage
 form = cgi.FieldStorage()
 
-print ("Content-Type: text/html\n\r\n\r")
-print ('<html>')
-print ('<head><title>Search Page</title></head>\n\n')
-print ('<body>')
-print ('<p>Search Results !!! </p>') 
+print "Content-Type: text/html\n\r\n\r"
+print '<html>'
+print '<head><title>Search Page</title></head>\n\n'
+print '<body>'
+print '<p>Search Results !!! </p>' 
 
 #Get data from fields
 q = form.getvalue('query_term')
 
 # python search script
-####index_dir = "H:/myproject/indexing/"
 index_dir = "indexing"
 ####for web hosting path selection shuold be like this
 #####index_dir = "/public_html/indexing/"
@@ -41,23 +40,23 @@ def main():
         query = QueryParser("content", schema = ix.schema).parse(unicode(q))
         results = searcher.search(query, limit= 20)
         #results = searcher.search(query)
-        print ('<div style="color:red">')
-        print ('<h4>')
+        print '<div style="color:red">'
+        print '<h4>'
         print ('Documents matched--', len(results), 'for the query = ' + q )
-        print ('</h4>')
-        print ('<p>Showing results...</p>')
-        print ('</div>')
+        print '</h4>'
+        print '<p>Showing results...</p>'
+        print '</div>'
         if len(results) != 0:
             for res in results:
                 try:
                    if res['title'] is not None:
                     #print '<div style="color:#006621">'
-                      print ('<a href='+ res['path'] +'/>')
-                      print ('<br>')
-                      print (res['title'] + ' <br> ' + '<div style="color:#006621">') +  res['path']
+                      print '<a href='+ res['path'] +'/>'
+                      print '<br>' 
+                      print res['title'] + ' <br> ' + '<div style="color:#006621">' +  res['path']
                       
-                      print (res['path'])
-                      print ('</div>')
+                      print res['path']
+                      print '</div>'
                       #print '<br>'
                 except:
                       pass
@@ -68,10 +67,10 @@ def main():
 if __name__ == '__main__':
     main()
 
-print ('</form>')
+print '</form>'
 
 
-print ('</body>')
-print ('</html>')
+print '</body>'
+print '</html>'
 
 
